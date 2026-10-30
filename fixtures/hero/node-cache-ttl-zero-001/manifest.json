@@ -1,0 +1,56 @@
+{
+  "caseId": "node-cache-ttl-zero-001",
+  "upstreamRepository": "https://github.com/node-cache/node-cache",
+  "wrongCommit": "bc49b373396cdbe4c1de612b866b4fece4c8471e",
+  "knownGoodCommit": "59d947471d0dcc2d305d1675e80c04e4a598cc86",
+  "nodeRequirement": ">=22",
+  "existingSuite": {
+    "command": "node node_modules/grunt-cli/bin/grunt build && node node_modules/expresso/bin/expresso test/node_cache-test.js",
+    "lockfile": "suite/package-lock.json",
+    "lockfileSha256": "21c448532a8e400504c800df67ad246d6d9461c7883fc7e68861d3960ebc3ce8",
+    "testsPassed": 8,
+    "testsFailed": 0,
+    "exitCode": 0,
+    "runtime": "node v22.23.2"
+  },
+  "candidates": [
+    {
+      "name": "wrong",
+      "path": "suite/source",
+      "kind": "node-cache",
+      "upstreamCommit": "bc49b373396cdbe4c1de612b866b4fece4c8471e",
+      "sourcePath": "suite/source/_src/lib/node_cache.coffee",
+      "sourceTreeSha256": "867af2a49f8527852e202ea5c30bf6c00a8ca363ea407b2455c1d44198cbef52",
+      "artifactSha256": "d54f47f8fba0d998a6cacd0ebd9adee263eff426224356fb239110cc3059d980",
+      "buildCommand": "node node_modules/grunt-cli/bin/grunt build --no-color"
+    },
+    {
+      "name": "good",
+      "path": "upstream/4.0.0",
+      "kind": "node-cache",
+      "upstreamCommit": "59d947471d0dcc2d305d1675e80c04e4a598cc86",
+      "sourcePath": "upstream/4.0.0/_src/lib/node_cache.coffee",
+      "sourceTreeSha256": "648808475cfc0232a629a530be6a241dc474ad0df7c36fe71679ddc343fc0c01",
+      "artifactSha256": "164a5b47345933187e28f11355cce49d9012347320997f4e44ae4bec34055380",
+      "buildCommand": "node node_modules/grunt-cli/bin/grunt build --no-color"
+    },
+    {
+      "name": "equivalent",
+      "path": "candidates/equivalent",
+      "kind": "node-cache",
+      "upstreamCommit": null,
+      "artifactSha256": "22b241b1a9b9469f81bb5cee6ecbd0b0da72fcf8aac77846856802519176be73",
+      "label": "TRANSCRIPTION_TEST_FIXTURE"
+    },
+    {
+      "name": "survivor",
+      "path": "candidates/survivor-s1",
+      "kind": "node-cache",
+      "upstreamCommit": null,
+      "artifactSha256": "967c8eb3a1aa287c97f0fa790a4499888d84b84010a64df49664e8f87e8ba296",
+      "label": "ORACLE_RED_TEAM_FIXTURE"
+    }
+  ],
+  "containerImage": "sha256:c610fcdfb1d5b4740dd70c284ed3cb16bb857e0f7166196e36a5501df7a3aa32",
+  "containerPlatform": "linux/amd64"
+}

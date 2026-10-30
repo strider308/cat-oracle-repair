@@ -1,0 +1,48 @@
+{
+  "candidateCommit": "bc49b373396cdbe4c1de612b866b4fece4c8471e",
+  "knownGoodCommit": "59d947471d0dcc2d305d1675e80c04e4a598cc86",
+  "command": "node node_modules/grunt-cli/bin/grunt build && node node_modules/expresso/bin/expresso test/node_cache-test.js",
+  "environmentDigest": "38180d3fdd91a25725aa38f141eb4a475e3636362234e14da5bf5f491ba7dbc9",
+  "startedAt": "2026-10-06T18:01:57.388Z",
+  "durationMs": 18649,
+  "exitCode": 0,
+  "testsPassed": 8,
+  "testsFailed": 0,
+  "candidateBuildCommand": "node node_modules/grunt-cli/bin/grunt build --no-color",
+  "stdoutBytes": 1245,
+  "stderrBytes": 27,
+  "stdoutHash": "2eb729337ad806a3f4821a0b312ed74077129a05b070baa74cc33ba81ee69d08",
+  "stderrHash": "52d095a241c774812cae96267f50ef90f2e68eef2a425556a32cac82e3ccd4d5",
+  "lockfileHash": "21c448532a8e400504c800df67ad246d6d9461c7883fc7e68861d3960ebc3ce8",
+  "sourceTrees": {
+    "v3": "867af2a49f8527852e202ea5c30bf6c00a8ca363ea407b2455c1d44198cbef52",
+    "v4": "648808475cfc0232a629a530be6a241dc474ad0df7c36fe71679ddc343fc0c01"
+  },
+  "sourceFileCounts": {
+    "v3": 11,
+    "v4": 7
+  },
+  "rebuiltRuntime": {
+    "v3": [
+      {
+        "path": "index.js",
+        "sha256": "61beb037d6f5de6a92e5732a31405273c31ac82c9570be6332e2e39cd3f56e90"
+      },
+      {
+        "path": "lib/node_cache.js",
+        "sha256": "270341b0868ac20d09281b3377e52578b95f980d1ae52b77185081a4ad602089"
+      }
+    ],
+    "v4": [
+      {
+        "path": "index.js",
+        "sha256": "1f1a1b70f8b5ca46a70c7c1b29e8acc84ae82e7ac88c26caada3863de9daf095"
+      },
+      {
+        "path": "lib/node_cache.js",
+        "sha256": "9fe726ef8dece7acae8f4c6eca2044e577a699cd0ce94c9ef5a39bfe59c549d4"
+      }
+    ]
+  },
+  "result": "PASS"
+}

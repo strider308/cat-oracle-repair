@@ -1,0 +1,220 @@
+{
+  "profileVersion": "ControlledBenchmarkSubjectProfileV1",
+  "caseId": "node-cache-ttl-zero-001",
+  "status": "READY_FOR_OWNER_FREEZE_REVIEW",
+  "maliciousCodeIsolationClaim": false,
+  "arbitraryExternalSubjectSupport": "NOT_APPROVED",
+  "candidateCreated": false,
+  "competitiveLanesExecuted": false,
+  "candidateId": "dp05b-controlled-v1",
+  "candidateRoot": "fixtures/hero/node-cache-ttl-zero-001/candidates/dp05b-controlled-v1/runtime",
+  "mutationSpecPath": "benchmark/protocol/controlled-mutation-spec-v1.json",
+  "mutationSpecSha256": "9426b0807c14c1bc4a28e43fbd4af8446230f25eb20fd10069f19e9077807ab4",
+  "base": {
+    "sourceRoot": "fixtures/hero/node-cache-ttl-zero-001/upstream/4.0.0",
+    "sourceTreeInventoryAlgorithm": "sha256(canonical(sorted([{path,sha256}])))",
+    "sourceTreeFileCount": 7,
+    "sourceTreeSha256": "648808475cfc0232a629a530be6a241dc474ad0df7c36fe71679ddc343fc0c01",
+    "sourceTree": [
+      {
+        "path": "Gruntfile.coffee",
+        "sha256": "dde635b6343c91f6a62ad46786e81f9ea39eb3e9e5d8e56f82789abe243aae91"
+      },
+      {
+        "path": "LICENSE",
+        "sha256": "9fe226a90a1549d833ccb09feee2041d52987a9f1bdbc47321df32ffcfc503e2"
+      },
+      {
+        "path": "_src/index.coffee",
+        "sha256": "7ecc4172161c5eb5854a9542cfa25fdfbd57172cc2de0b24ca1d07b476064756"
+      },
+      {
+        "path": "_src/lib/node_cache.coffee",
+        "sha256": "2b5819050c06c30f6b60e58cc30e2beae05efb2b4742689f862551a1da34f95b"
+      },
+      {
+        "path": "index.js",
+        "sha256": "01db186f5322f7646549f5e3e9258f835da2c51ac7933715c386c9b586c5095b"
+      },
+      {
+        "path": "lib/node_cache.js",
+        "sha256": "d3f7530d20553871abc050bb99b77175a56715c45ed97d2f9ce621f548a736a6"
+      },
+      {
+        "path": "package.json",
+        "sha256": "dad50ac14000d51e2ef6b64cbc963411292c28fbb598994f30b41075044a057a"
+      }
+    ],
+    "lockfilePath": "fixtures/hero/node-cache-ttl-zero-001/suite/package-lock.json",
+    "lockfileSha256": "21c448532a8e400504c800df67ad246d6d9461c7883fc7e68861d3960ebc3ce8",
+    "expectedRuntimeFiles": [
+      "index.js",
+      "lib/node_cache.js"
+    ]
+  },
+  "dependencyIdentity": {
+    "root": "fixtures/hero/node-cache-ttl-zero-001/suite/node_modules",
+    "inventoryVersion": "DependencyInventoryV1",
+    "inventoryAlgorithm": "sha256(UTF8(canonical(sorted([{path,sha256}]))))",
+    "rootContainment": "RESOLVED_ROOT_ONLY",
+    "symlinks": "REJECT",
+    "entryTypes": "REGULAR_FILES_ONLY",
+    "pathEncoding": "RELATIVE_NORMALIZED_FORWARD_SLASH",
+    "fileDigest": "RAW_SHA256",
+    "ordering": "LEXICAL_BY_NORMALIZED_PATH",
+    "canonicalSerialization": "SORTED_OBJECT_KEYS_UTF8_NO_TRAILING_NEWLINE",
+    "aggregateDigest": "SHA256",
+    "fileCount": 4219,
+    "inventorySha256": "a0923da0a3195e2384bb2b56ffbcd45c891cd631cc28433ed464c27527980849",
+    "lockfileSha256": "21c448532a8e400504c800df67ad246d6d9461c7883fc7e68861d3960ebc3ce8"
+  },
+  "executionInfrastructure": {
+    "identitySha256": "d5298dc269be6091aa95275c51f05b27fbf32179a36ab21fc7b8456e04367965",
+    "class": "LOCAL_CONTAINER_EXECUTION_BOUNDARY",
+    "adapterPath": "src/evaluation/p03-subject-adapter.cjs",
+    "adapterSha256": "ab018f6030edfa6a4fd45f496f40285d6823f76dfcc02c5c677a674ba333ea64",
+    "containerImageDigest": "sha256:c610fcdfb1d5b4740dd70c284ed3cb16bb857e0f7166196e36a5501df7a3aa32",
+    "networkProfile": "none",
+    "mountProfile": {
+      "subjectTarget": "/subject",
+      "subjectReadOnly": true,
+      "adapterTarget": "/subject-adapter.cjs",
+      "adapterReadOnly": true,
+      "tmpfsTarget": "/tmp",
+      "tmpfsOptions": "rw,noexec,nosuid,size=32m"
+    },
+    "containerUser": "10001:10001",
+    "readOnlyRoot": true,
+    "capabilities": "ALL",
+    "noNewPrivileges": true,
+    "resourceLimits": {
+      "pids": 64,
+      "memory": "256m",
+      "cpus": 1
+    },
+    "executorPath": "src/evaluation/p03-subject.ts",
+    "executorSha256": "1faa379bfb76cff590fc45dff3ff403ea80e6043917a27c4ac0012e705c15d60",
+    "descriptor": {
+      "class": "LOCAL_CONTAINER_EXECUTION_BOUNDARY",
+      "adapterPath": "src/evaluation/p03-subject-adapter.cjs",
+      "containerImageDigest": "sha256:c610fcdfb1d5b4740dd70c284ed3cb16bb857e0f7166196e36a5501df7a3aa32",
+      "networkProfile": "none",
+      "mountProfile": {
+        "subjectTarget": "/subject",
+        "subjectReadOnly": true,
+        "adapterTarget": "/subject-adapter.cjs",
+        "adapterReadOnly": true,
+        "tmpfsTarget": "/tmp",
+        "tmpfsOptions": "rw,noexec,nosuid,size=32m"
+      },
+      "containerUser": "10001:10001",
+      "readOnlyRoot": true,
+      "capabilities": "ALL",
+      "noNewPrivileges": true,
+      "resourceLimits": {
+        "pids": 64,
+        "memory": "256m",
+        "cpus": 1
+      }
+    }
+  },
+  "controlledExecutionInfrastructureV2": {
+    "identityVersion": "ExecutionInfrastructureIdentityV2",
+    "subjectAdapterPath": "src/evaluation/p03-subject-adapter.cjs",
+    "subjectAdapterSha256": "ab018f6030edfa6a4fd45f496f40285d6823f76dfcc02c5c677a674ba333ea64",
+    "executorPath": "src/evaluation/p03-subject.ts",
+    "executorSha256": "1faa379bfb76cff590fc45dff3ff403ea80e6043917a27c4ac0012e705c15d60",
+    "containerImageDigest": "sha256:c610fcdfb1d5b4740dd70c284ed3cb16bb857e0f7166196e36a5501df7a3aa32",
+    "dependencyInventoryVersion": "DependencyInventoryV1",
+    "dependencyIdentitySha256": "a0923da0a3195e2384bb2b56ffbcd45c891cd631cc28433ed464c27527980849",
+    "dependencyLockSha256": "21c448532a8e400504c800df67ad246d6d9461c7883fc7e68861d3960ebc3ce8",
+    "buildContractPath": "benchmark/protocol/controlled-build-contract-v1.json",
+    "network": "none",
+    "mountProfile": "subject+adapter-read-only;tmpfs-noexec-nosuid",
+    "readOnlyRoot": true,
+    "containerUser": "10001:10001",
+    "capDrop": [
+      "ALL"
+    ],
+    "noNewPrivileges": true,
+    "nodeRuntimeVersion": "v22.23.2",
+    "buildContractSha256": "a58471b286b8304c02de402161fd18770db1a16bbc8fc4d3e4c23f56094db708",
+    "identitySha256": "1e99ea7352f8d8b195a4d8e0b3637ace24ecb044baa4870858914548d430c5c2"
+  },
+  "controlledProfileRequirements": [
+    "mutation-base-file-identity",
+    "mutation-preimage",
+    "mutation-replacement",
+    "mutation-match-count",
+    "no-result-leakage",
+    "delete-behavior-label-and-effects",
+    "build-contract-complete",
+    "pinned-image-and-node-runtime",
+    "grunt-and-coffeescript-byte-identity",
+    "frozen-banner-date",
+    "banner-only-normalization",
+    "unmodified-base-rebuild-reproducibility",
+    "source-identity-deterministic",
+    "runtime-identity-deterministic",
+    "source-runtime-swap-rejected",
+    "exact-source-delta",
+    "dependency-inventory-versioned",
+    "dependency-identity-recomputed",
+    "execution-infrastructure-v2-complete",
+    "freeze-commit-required",
+    "immutable-commit-blobs",
+    "executable-closure-complete",
+    "transitive-module-mutation-rejected",
+    "unresolved-dynamic-import-rejected",
+    "future-candidate-output-path-reachable",
+    "exact-delta-path-and-bytes-enforced",
+    "arbitrary-manifest-rejected",
+    "self-asserted-evidence-insufficient",
+    "b0-common-tuple",
+    "b1-common-tuple",
+    "b2-common-tuple",
+    "b4-common-tuple",
+    "historical-and-survivor-substitution-forbidden",
+    "candidate-not-generated-and-results-absent",
+    "competitive-lanes-not-executed",
+    "known-good-remains-accepted",
+    "known-wrong-remains-rejected",
+    "p03-runner-unchanged"
+  ],
+  "productionSandboxGaps": [
+    "arbitrary-candidate-hostile-loader-escape",
+    "arbitrary-candidate-child-process-escape",
+    "arbitrary-candidate-worker-escape"
+  ],
+  "candidateBundleRoot": "fixtures/hero/node-cache-ttl-zero-001/candidates/dp05b-controlled-v1",
+  "candidateSourceRoot": "fixtures/hero/node-cache-ttl-zero-001/candidates/dp05b-controlled-v1/source",
+  "reproductionSourceRoot": "fixtures/hero/node-cache-ttl-zero-001/candidates/dp05b-controlled-v1/reproduction/source",
+  "reproductionRuntimeRoot": "fixtures/hero/node-cache-ttl-zero-001/candidates/dp05b-controlled-v1/reproduction/runtime",
+  "acceptanceMatrixPath": "benchmark/protocol/controlled-profile-acceptance-matrix-v1.json",
+  "acceptanceMatrixSha256": "48f58e625b2a98a1d6ee57724c0798f287d33bfb06c158168a433c00712e2284",
+  "generatorContract": {
+    "contractVersion": "ControlledCandidateGeneratorV1",
+    "implementationStatus": "IMPLEMENTED_NOT_RUN_ON_REAL_MUTATION",
+    "generatorPath": "scripts/cat-generate-controlled-candidate.ts",
+    "requiredOperations": [
+      "require-freeze-commit-sha-and-load-committed-controls",
+      "verify-base-tree-dependencies-and-lockfile",
+      "copy-exact-base-to-isolated-source-root",
+      "apply-one-exact-utf8-replacement",
+      "reject-any-other-changed-path",
+      "build-runtime-with-frozen-container-command-and-dependencies",
+      "normalize-only-frozen-banner-date",
+      "inventory-source-and-runtime-bytes",
+      "repeat-generation-in-separate-roots-and-compare-bytes",
+      "emit-generation-evidence-and-same-candidate-binding"
+    ],
+    "requiredOutputs": [
+      "complete-source-inventory",
+      "complete-runtime-inventory",
+      "candidate-manifest",
+      "change-binding",
+      "generator-and-spec-identity"
+    ],
+    "noPostGenerationChanges": true
+  }
+}

@@ -1,0 +1,11 @@
+fixtures/hero/node-cache-ttl-zero-001/suite/source/** whitespace=-trailing-space
+fixtures/hero/node-cache-ttl-zero-001/upstream/** whitespace=-trailing-space
+fixtures/hero/node-cache-ttl-zero-001/** -text whitespace=cr-at-eol,-trailing-space
+evidence/historical/p03-v2/** -text whitespace=cr-at-eol
+src/evaluation/p03-runner.ts -text
+src/evaluation/p03-build-evidence.cjs -text
+fixtures/hero/node-cache-ttl-zero-001/adapter.cjs -text
+fixtures/hero/node-cache-ttl-zero-001/suite-runner.cjs -text
+evidence/p03-receipts/** -text
+evidence/manifests/p03-supersession-*.json -text
+evidence/recovery/p03-v2-recovery-inventory.json -text

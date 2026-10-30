@@ -1,0 +1,53 @@
+{
+  "version": "FreezeExecutableClosureV1",
+  "rows": [
+    {
+      "path": "scripts/cat-generate-controlled-candidate.ts",
+      "sha256": "76ff9fefba8cd68dabba95fd643ee60aa5f3caf335120fd7cebd5b13aaf3220b"
+    },
+    {
+      "path": "scripts/cat-subject.ts",
+      "sha256": "f399ee90a7131335b38b0c1b5f327a2569418b5b4385c94b53158a260fcef116"
+    },
+    {
+      "path": "src/benchmark/controlled-candidate-generator.ts",
+      "sha256": "2e1e19faed2833d408dfd8a54c2cbbf2e17309a3fcebe2be7d968b3bd1ec5bcc"
+    },
+    {
+      "path": "src/benchmark/controlled-subject-profile.ts",
+      "sha256": "a9286f728a66282b88169c016007076f224a260e6d3fabd635bf830b1dd43db9"
+    },
+    {
+      "path": "src/core/receipt.ts",
+      "sha256": "1791da75d87f8eaf004752b6dbd5a5c80c79b34e33a8ddbc59dbf3e8cfcbe61d"
+    },
+    {
+      "path": "src/core/result.ts",
+      "sha256": "3182efe2617a00087826bbcc391243edfdbb63aa91fc18dc26bab805e43766f1"
+    },
+    {
+      "path": "src/evaluation/p03-build-evidence.cjs",
+      "sha256": "cb3a7622553672a3a93b28ede9603888f75e65584dd100ce6c2a1f1678afb6c8"
+    },
+    {
+      "path": "src/evaluation/p03-runner.ts",
+      "sha256": "aa2ea12bb5f04429622eacc6d26687fd334514df6fe97643d642c5f5df314262"
+    },
+    {
+      "path": "src/evaluation/p03-subject-adapter.cjs",
+      "sha256": "ab018f6030edfa6a4fd45f496f40285d6823f76dfcc02c5c677a674ba333ea64"
+    },
+    {
+      "path": "src/evaluation/p03-subject-receipt.ts",
+      "sha256": "13c681b7620d7738d0cca57dc05cf90be203016187582cfaa27c63e0f7cbb86b"
+    },
+    {
+      "path": "src/evaluation/p03-subject.ts",
+      "sha256": "1faa379bfb76cff590fc45dff3ff403ea80e6043917a27c4ac0012e705c15d60"
+    },
+    {
+      "path": "src/oracle/canonical.ts",
+      "sha256": "5b1989916a0c0e23a6c6c63eda07e6ce5f83c23eaff2a6d3d3501597c02eee98"
+    }
+  ]
+}

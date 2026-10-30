@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ControlledGenerationEvidenceV2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "evidenceVersion", "sourceIdentityAlgorithm", "runtimeIdentityAlgorithm", "freezeCommitSha", "profileSha256", "mutationSpecSha256",
+    "buildContractSha256", "sourceCandidateHash", "runtimeCandidateHash", "runtimeManifestSha256", "dependencyIdentitySha256",
+    "dependencyLockSha256", "executionInfrastructureIdentitySha256", "changedPaths", "changeBindings", "reproducibility", "generationEvidenceSha256"
+  ],
+  "properties": {
+    "evidenceVersion": {"const": "ControlledGenerationEvidenceV2"},
+    "sourceIdentityAlgorithm": {"const": "SourceInventoryV1"},
+    "runtimeIdentityAlgorithm": {"const": "RuntimeInventoryV1"},
+    "freezeCommitSha": {"type": "string", "pattern": "^[a-f0-9]{40}$"},
+    "profileSha256": {"$ref": "#/$defs/hash"},
+    "mutationSpecSha256": {"$ref": "#/$defs/hash"},
+    "buildContractSha256": {"$ref": "#/$defs/hash"},
+    "sourceCandidateHash": {"$ref": "#/$defs/hash"},
+    "runtimeCandidateHash": {"$ref": "#/$defs/hash"},
+    "runtimeManifestSha256": {"$ref": "#/$defs/hash"},
+    "dependencyIdentitySha256": {"$ref": "#/$defs/hash"},
+    "dependencyLockSha256": {"$ref": "#/$defs/hash"},
+    "executionInfrastructureIdentitySha256": {"$ref": "#/$defs/hash"},
+    "changedPaths": {"type": "array", "const": ["_src/lib/node_cache.coffee"]},
+    "changeBindings": {"$ref": "#/$defs/changeBindings"},
+    "reproducibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["version", "derivationCount", "primary", "reproduction", "sourceByteEquivalent", "runtimeByteEquivalent", "changeBindingEquivalent", "fullGenerationEquivalent"],
+      "properties": {
+        "version": {"const": "ControlledGenerationReproducibilityV1"},
+        "derivationCount": {"const": 2},
+        "primary": {"$ref": "#/$defs/derivation"},
+        "reproduction": {"$ref": "#/$defs/derivation"},
+        "sourceByteEquivalent": {"const": true},
+        "runtimeByteEquivalent": {"const": true},
+        "changeBindingEquivalent": {"const": true},
+        "fullGenerationEquivalent": {"const": true}
+      }
+    },
+    "generationEvidenceSha256": {"$ref": "#/$defs/hash"}
+  },
+  "$defs": {
+    "hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "inventoryRow": {
+      "type": "object", "additionalProperties": false, "required": ["path", "sha256"],
+      "properties": {"path": {"type": "string", "minLength": 1}, "sha256": {"$ref": "#/$defs/hash"}}
+    },
+    "changeBindings": {
+      "type": "array", "minItems": 1, "maxItems": 1,
+      "items": {"type": "object", "additionalProperties": false, "required": ["path", "baseSha256", "resultSha256"],
+        "properties": {"path": {"const": "_src/lib/node_cache.coffee"}, "baseSha256": {"$ref": "#/$defs/hash"}, "resultSha256": {"$ref": "#/$defs/hash"}}}
+    },
+    "derivation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["sourceRows", "sourceCandidateHash", "changeBindings", "runtimeRows", "runtimeCandidateHash", "derivationIdentitySha256"],
+      "properties": {
+        "sourceRows": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/inventoryRow"}},
+        "sourceCandidateHash": {"$ref": "#/$defs/hash"},
+        "changeBindings": {"$ref": "#/$defs/changeBindings"},
+        "runtimeRows": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/inventoryRow"}},
+        "runtimeCandidateHash": {"$ref": "#/$defs/hash"},
+        "derivationIdentitySha256": {"$ref": "#/$defs/hash"}
+      }
+    }
+  }
+}

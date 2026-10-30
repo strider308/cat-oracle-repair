@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "caseId": "node-cache-ttl-zero-001",
+  "candidateId": "dp05b-controlled-v1",
+  "candidateRoot": "fixtures/hero/node-cache-ttl-zero-001/candidates/dp05b-controlled-v1/runtime",
+  "entrypoint": "index.js",
+  "files": [
+    {
+      "path": "index.js",
+      "sha256": "1f1a1b70f8b5ca46a70c7c1b29e8acc84ae82e7ac88c26caada3863de9daf095"
+    },
+    {
+      "path": "lib/node_cache.js",
+      "sha256": "376c51e258aa208e8a9cdc1061fa04bcf58b33c0f0505c46d0a70e5cb4d86ffd"
+    }
+  ],
+  "candidateHash": "fc594a965abb22c1542d7b887a8490244454d0c9ba51e16babeaeabf456e7621"
+}

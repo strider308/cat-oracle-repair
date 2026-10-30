@@ -1,0 +1,34 @@
+{
+  "specVersion": "ControlledMutationSpecV1",
+  "caseId": "node-cache-ttl-zero-001",
+  "behavioralClass": "TTL_ZERO_DELETES_EXISTING_ENTRY",
+  "baseSourceRoot": "fixtures/hero/node-cache-ttl-zero-001/upstream/4.0.0",
+  "sourcePath": "_src/lib/node_cache.coffee",
+  "baseFileSha256": "2b5819050c06c30f6b60e58cc30e2beae05efb2b4742689f862551a1da34f95b",
+  "transform": {
+    "kind": "exact-utf8-text-replacement",
+    "oldText": "if ttl >= 0",
+    "newText": "if ttl > 0",
+    "matchCount": 1
+  },
+  "allowedChangedSourcePaths": ["_src/lib/node_cache.coffee"],
+  "expectedRuntimeFiles": ["index.js", "lib/node_cache.js"],
+  "build": {
+    "command": ["node", "node_modules/grunt-cli/bin/grunt", "build", "--no-color"],
+    "workingDirectory": "fixtures/hero/node-cache-ttl-zero-001/upstream/4.0.0"
+  },
+  "alternatives": [],
+  "fallbacks": [],
+  "outcomeBasedSelection": "PROHIBITED",
+  "capabilityConstraints": [
+    "no-new-require-or-import",
+    "no-dynamic-module-loading",
+    "no-eval-or-new-function",
+    "no-filesystem-access",
+    "no-child-process-or-worker-threads",
+    "no-network-or-process-execution",
+    "no-native-addon-or-wasi-loading",
+    "no-dependency-or-package-metadata-changes",
+    "only-the-frozen-source-path-may-change"
+  ]
+}

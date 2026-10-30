@@ -1,0 +1,138 @@
+{
+  "evidenceVersion": "ControlledGenerationEvidenceV2",
+  "sourceIdentityAlgorithm": "SourceInventoryV1",
+  "runtimeIdentityAlgorithm": "RuntimeInventoryV1",
+  "freezeCommitSha": "5069680ff093695a227bf410eb3de88d99dce9e7",
+  "profileSha256": "77b983443329fec271f15a78f222552c1a04a28c5c1a5b85a4a69b6509c3e62f",
+  "mutationSpecSha256": "9426b0807c14c1bc4a28e43fbd4af8446230f25eb20fd10069f19e9077807ab4",
+  "buildContractSha256": "a58471b286b8304c02de402161fd18770db1a16bbc8fc4d3e4c23f56094db708",
+  "sourceCandidateHash": "80424bd379df4a836680d5ca420289c7e080a24377e61947a393f01c08d0a8c1",
+  "runtimeCandidateHash": "fc594a965abb22c1542d7b887a8490244454d0c9ba51e16babeaeabf456e7621",
+  "runtimeManifestSha256": "a138d0888d870fa2f65c02c4d445d553ce506ad038c9a178493ae4d3a0bff4b6",
+  "dependencyIdentitySha256": "a0923da0a3195e2384bb2b56ffbcd45c891cd631cc28433ed464c27527980849",
+  "dependencyLockSha256": "21c448532a8e400504c800df67ad246d6d9461c7883fc7e68861d3960ebc3ce8",
+  "executionInfrastructureIdentitySha256": "1e99ea7352f8d8b195a4d8e0b3637ace24ecb044baa4870858914548d430c5c2",
+  "changedPaths": [
+    "_src/lib/node_cache.coffee"
+  ],
+  "changeBindings": [
+    {
+      "path": "_src/lib/node_cache.coffee",
+      "baseSha256": "2b5819050c06c30f6b60e58cc30e2beae05efb2b4742689f862551a1da34f95b",
+      "resultSha256": "7e7e1bc2924b295d2e4ca8c314661cf2a91dce7005c08101be558e39ee03c29d"
+    }
+  ],
+  "reproducibility": {
+    "version": "ControlledGenerationReproducibilityV1",
+    "derivationCount": 2,
+    "primary": {
+      "sourceRows": [
+        {
+          "path": "Gruntfile.coffee",
+          "sha256": "dde635b6343c91f6a62ad46786e81f9ea39eb3e9e5d8e56f82789abe243aae91"
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "9fe226a90a1549d833ccb09feee2041d52987a9f1bdbc47321df32ffcfc503e2"
+        },
+        {
+          "path": "_src/index.coffee",
+          "sha256": "7ecc4172161c5eb5854a9542cfa25fdfbd57172cc2de0b24ca1d07b476064756"
+        },
+        {
+          "path": "_src/lib/node_cache.coffee",
+          "sha256": "7e7e1bc2924b295d2e4ca8c314661cf2a91dce7005c08101be558e39ee03c29d"
+        },
+        {
+          "path": "index.js",
+          "sha256": "01db186f5322f7646549f5e3e9258f835da2c51ac7933715c386c9b586c5095b"
+        },
+        {
+          "path": "lib/node_cache.js",
+          "sha256": "d3f7530d20553871abc050bb99b77175a56715c45ed97d2f9ce621f548a736a6"
+        },
+        {
+          "path": "package.json",
+          "sha256": "dad50ac14000d51e2ef6b64cbc963411292c28fbb598994f30b41075044a057a"
+        }
+      ],
+      "sourceCandidateHash": "80424bd379df4a836680d5ca420289c7e080a24377e61947a393f01c08d0a8c1",
+      "changeBindings": [
+        {
+          "path": "_src/lib/node_cache.coffee",
+          "baseSha256": "2b5819050c06c30f6b60e58cc30e2beae05efb2b4742689f862551a1da34f95b",
+          "resultSha256": "7e7e1bc2924b295d2e4ca8c314661cf2a91dce7005c08101be558e39ee03c29d"
+        }
+      ],
+      "runtimeRows": [
+        {
+          "path": "index.js",
+          "sha256": "1f1a1b70f8b5ca46a70c7c1b29e8acc84ae82e7ac88c26caada3863de9daf095"
+        },
+        {
+          "path": "lib/node_cache.js",
+          "sha256": "376c51e258aa208e8a9cdc1061fa04bcf58b33c0f0505c46d0a70e5cb4d86ffd"
+        }
+      ],
+      "runtimeCandidateHash": "fc594a965abb22c1542d7b887a8490244454d0c9ba51e16babeaeabf456e7621",
+      "derivationIdentitySha256": "9ba69bf6c123ccdf97fe3c9514fff0f3670140f4a2df14c748bb804663af72af"
+    },
+    "reproduction": {
+      "sourceRows": [
+        {
+          "path": "Gruntfile.coffee",
+          "sha256": "dde635b6343c91f6a62ad46786e81f9ea39eb3e9e5d8e56f82789abe243aae91"
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "9fe226a90a1549d833ccb09feee2041d52987a9f1bdbc47321df32ffcfc503e2"
+        },
+        {
+          "path": "_src/index.coffee",
+          "sha256": "7ecc4172161c5eb5854a9542cfa25fdfbd57172cc2de0b24ca1d07b476064756"
+        },
+        {
+          "path": "_src/lib/node_cache.coffee",
+          "sha256": "7e7e1bc2924b295d2e4ca8c314661cf2a91dce7005c08101be558e39ee03c29d"
+        },
+        {
+          "path": "index.js",
+          "sha256": "01db186f5322f7646549f5e3e9258f835da2c51ac7933715c386c9b586c5095b"
+        },
+        {
+          "path": "lib/node_cache.js",
+          "sha256": "d3f7530d20553871abc050bb99b77175a56715c45ed97d2f9ce621f548a736a6"
+        },
+        {
+          "path": "package.json",
+          "sha256": "dad50ac14000d51e2ef6b64cbc963411292c28fbb598994f30b41075044a057a"
+        }
+      ],
+      "sourceCandidateHash": "80424bd379df4a836680d5ca420289c7e080a24377e61947a393f01c08d0a8c1",
+      "changeBindings": [
+        {
+          "path": "_src/lib/node_cache.coffee",
+          "baseSha256": "2b5819050c06c30f6b60e58cc30e2beae05efb2b4742689f862551a1da34f95b",
+          "resultSha256": "7e7e1bc2924b295d2e4ca8c314661cf2a91dce7005c08101be558e39ee03c29d"
+        }
+      ],
+      "runtimeRows": [
+        {
+          "path": "index.js",
+          "sha256": "1f1a1b70f8b5ca46a70c7c1b29e8acc84ae82e7ac88c26caada3863de9daf095"
+        },
+        {
+          "path": "lib/node_cache.js",
+          "sha256": "376c51e258aa208e8a9cdc1061fa04bcf58b33c0f0505c46d0a70e5cb4d86ffd"
+        }
+      ],
+      "runtimeCandidateHash": "fc594a965abb22c1542d7b887a8490244454d0c9ba51e16babeaeabf456e7621",
+      "derivationIdentitySha256": "9ba69bf6c123ccdf97fe3c9514fff0f3670140f4a2df14c748bb804663af72af"
+    },
+    "sourceByteEquivalent": true,
+    "runtimeByteEquivalent": true,
+    "changeBindingEquivalent": true,
+    "fullGenerationEquivalent": true
+  },
+  "generationEvidenceSha256": "1d5e9133c0ad612a5e629859530548e1239c68c451df322544ec3bb598ab7f10"
+}

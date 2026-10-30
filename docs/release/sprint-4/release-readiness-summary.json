@@ -1,0 +1,72 @@
+{
+  "schema": "CatSprint4ReleaseReadinessV1",
+  "sourceSha": "1509bbb32931a309c5ffb67cc2118582f285c1d0",
+  "successorSha": "c182c065eca2615f118db8314fdf39504e5dba4f",
+  "startingSourcePreserved": true,
+  "trustedFreezeSha": "5069680ff093695a227bf410eb3de88d99dce9e7",
+  "candidateArtifactSourceSha": "cec8054ba8690172a7b53267cc985a4445b7860b",
+  "releaseVerdict": "HUMAN_REVIEW_REQUIRED",
+  "acceptanceCriteriaMet": false,
+  "console": {
+    "status": "LOCAL_STATIC_RECORDED_MODE",
+    "cases": [
+      "node-cache-ttl-zero-001",
+      "h0-1-authority-preflight-001"
+    ],
+    "p04": "OMITTED_STRICT_VERIFICATION_UNAVAILABLE",
+    "desktop": "RENDERED",
+    "tablet": "NOT CAPTURED",
+    "mobile320": "NOT CAPTURED",
+    "responsiveReason": "local browser viewport override disabled in Work settings"
+  },
+  "validation": {
+    "focusedConsole": "PASS 58/58 standalone; static exporter 1/1",
+    "staticConsole": "PASS on ff00b3d; final package refreshed after docs-only closeout",
+    "fullSuite": "PASS 339/339 on implementation commit c182c06; project validator on ff00b3d: 338/339, 1 Docker-backed P03 calibration failure",
+    "strictP04": "FAIL_INCOMPLETE_SEALED_ANNEX",
+    "freshModelList": "BLOCKED_DNS_ENOTFOUND",
+    "candidateF": "NOT_EVALUATED",
+    "inferencePosts": 0,
+    "triTierProjectValidation": "FAIL 338/339 on ff00b3d; completion HUMAN_REVIEW",
+    "oracleCommand": "BLOCKED Docker pipe permission denied",
+    "sealedCommand": "BLOCKED Docker pipe permission denied",
+    "gitleaks": "103 commits, 6 reviewed generic-api-key false positives",
+    "focusedDockerRetry": "FAIL Docker engine permission denied; no code/test bypass"
+  },
+  "publicOracle": "WEAK",
+  "spendLimit": {
+    "proposedUsd": 0.1,
+    "enforceable": false,
+    "status": "NOT_AUTHORIZED",
+    "reason": "provider-counted input tokens and account-level hard spending cap unavailable"
+  },
+  "security": {
+    "priorGitleaksFindings": 6,
+    "reviewedFalsePositives": 6,
+    "successorScan": "PASS review complete: 103 commits, 6 reviewed false positives; scan not clean",
+    "gitHistoryAuthorMetadata": "OWNER_DECISION_REQUIRED"
+  },
+  "license": {
+    "recommendation": "MIT",
+    "ownerApproved": false,
+    "rootLicenseWritten": false
+  },
+  "publication": {
+    "pushed": false,
+    "deployed": false,
+    "youtubePublished": false,
+    "devpostSubmitted": false
+  },
+  "humanApprovalRequired": true,
+  "remainingRisks": [
+    "P04 sealed evidence closure absent",
+    "exact-SHA required project validator failed one Docker-backed calibration test",
+    "Docker Desktop engine access denied on focused retry",
+    "proposed $0.10 spend limit unenforceable",
+    "Candidate F unevaluated",
+    "license and history disclosure undecided",
+    "no hosted judge URL",
+    "responsive screenshots and footage absent",
+    "public oracle weak"
+  ]
+}

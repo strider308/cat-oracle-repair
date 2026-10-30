@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://counterfactual-acceptance.local/schemas/single-case-result-v1.schema.json",
+  "title": "SingleCaseBaselineResultV1",
+  "oneOf": [
+    {"$ref": "#/$defs/unavailable"},
+    {"$ref": "#/$defs/executed"},
+    {"$ref": "#/$defs/catBinding"}
+  ],
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "identity": {
+      "type": "object",
+      "required": ["version", "challengeId", "challengeProtocolSha256", "laneId", "laneVersion", "laneStatus"],
+      "properties": {
+        "version": {"const": "SingleCaseBaselineResultV1"},
+        "challengeId": {"const": "node-cache-ttl-zero-001"},
+        "challengeProtocolSha256": {"$ref": "#/$defs/sha256"},
+        "laneId": {"enum": ["B0_EXISTING_CI", "B1_INDEPENDENT_AGENT_REVIEW", "B2_GENERATED_TESTS", "B3_MUTATION_PROPERTY", "B4_CAT"]},
+        "laneVersion": {"type": "string", "minLength": 1},
+        "laneStatus": {"enum": ["NOT_AVAILABLE", "EXECUTED", "BOUND_EXISTING_EVIDENCE"]}
+      }
+    },
+    "unavailable": {
+      "allOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["version", "challengeId", "challengeProtocolSha256", "laneId", "laneVersion", "laneStatus", "unavailabilityReason"],
+          "properties": {
+            "version": {"const": "SingleCaseBaselineResultV1"},
+            "challengeId": {"const": "node-cache-ttl-zero-001"},
+            "challengeProtocolSha256": {"$ref": "#/$defs/sha256"},
+            "laneId": {"enum": ["B0_EXISTING_CI", "B1_INDEPENDENT_AGENT_REVIEW", "B2_GENERATED_TESTS"]},
+            "laneVersion": {"type": "string", "minLength": 1},
+            "laneStatus": {"const": "NOT_AVAILABLE"},
+            "unavailabilityReason": {"enum": ["UNRESOLVED_CANDIDATE_IDENTITY", "NOT_AVAILABLE_IN_FROZEN_REPOSITORY"]}
+          }
+        }
+      ]
+    },
+    "executed": {
+      "allOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["version", "challengeId", "challengeProtocolSha256", "laneId", "laneVersion", "laneStatus", "inputPacketSha256", "startedAt", "completedAt", "executionStatus", "semanticOutcome", "semanticAdjudication", "findingSummary", "evidence", "informationBoundary", "independence", "integrity"],
+          "properties": {
+            "version": {"const": "SingleCaseBaselineResultV1"},
+            "challengeId": {"const": "node-cache-ttl-zero-001"},
+            "challengeProtocolSha256": {"$ref": "#/$defs/sha256"},
+            "laneId": {"enum": ["B0_EXISTING_CI", "B1_INDEPENDENT_AGENT_REVIEW", "B2_GENERATED_TESTS"]},
+            "laneVersion": {"type": "string", "minLength": 1},
+            "laneStatus": {"const": "EXECUTED"},
+            "inputPacketSha256": {"$ref": "#/$defs/sha256"},
+            "instructionSha256": {"$ref": "#/$defs/sha256"},
+            "startedAt": {"type": "string", "format": "date-time"},
+            "completedAt": {"type": "string", "format": "date-time"},
+            "executionStatus": {"enum": ["COMPLETED", "OPERATIONAL_FAILURE"]},
+            "semanticOutcome": {"enum": ["DETECTED", "NOT_DETECTED", "INCONCLUSIVE"]},
+            "semanticAdjudication": {
+              "type": "object", "additionalProperties": false, "required": ["authority", "evidenceSha256"],
+              "properties": {"authority": {"enum": ["HUMAN", "DETERMINISTIC_RULE"]}, "evidenceSha256": {"$ref": "#/$defs/sha256"}}
+            },
+            "findingSummary": {"type": "string", "maxLength": 2000},
+            "evidence": {
+              "type": "object", "additionalProperties": false,
+              "required": ["artifacts", "commands", "hashes"],
+              "properties": {
+                "artifacts": {"type": "array", "items": {"type": "string"}},
+                "commands": {"type": "array", "items": {"type": "string"}},
+                "hashes": {"type": "array", "items": {"$ref": "#/$defs/sha256"}}
+              }
+            },
+            "informationBoundary": {
+              "type": "object", "additionalProperties": false,
+              "required": ["forbiddenMaterialAccessed", "catDecisionVisible", "catWitnessVisible", "hiddenChallengeVisible", "otherLaneResultsVisible"],
+              "properties": {
+                "forbiddenMaterialAccessed": {"const": false}, "catDecisionVisible": {"const": false},
+                "catWitnessVisible": {"const": false}, "hiddenChallengeVisible": {"const": false}, "otherLaneResultsVisible": {"const": false}
+              }
+            },
+            "independence": {
+              "type": "object", "additionalProperties": false,
+              "required": ["priorLaneResultsVisible", "catDecisionVisible", "catWitnessVisible", "hiddenChallengeVisible"],
+              "properties": {
+                "priorLaneResultsVisible": {"const": false}, "catDecisionVisible": {"const": false},
+                "catWitnessVisible": {"const": false}, "hiddenChallengeVisible": {"const": false}
+              }
+            },
+            "integrity": {
+              "type": "object", "additionalProperties": false,
+              "required": ["canonicalization", "resultSha256"],
+              "properties": {
+                "canonicalization": {"const": "sorted-json-keys-utf8-newline-v1"},
+                "resultSha256": {"$ref": "#/$defs/sha256"}
+              }
+            }
+          },
+          "allOf": [
+            {"if": {"properties": {"executionStatus": {"const": "COMPLETED"}}, "required": ["executionStatus"]}, "then": {"properties": {"semanticOutcome": {"enum": ["DETECTED", "NOT_DETECTED"]}}}},
+            {"if": {"properties": {"executionStatus": {"const": "OPERATIONAL_FAILURE"}}, "required": ["executionStatus"]}, "then": {"properties": {"semanticOutcome": {"const": "INCONCLUSIVE"}}}},
+            {"if": {"properties": {"laneId": {"const": "B0_EXISTING_CI"}}, "required": ["laneId"]}, "then": {"not": {"required": ["instructionSha256"]}}},
+            {"if": {"properties": {"laneId": {"enum": ["B1_INDEPENDENT_AGENT_REVIEW", "B2_GENERATED_TESTS"]}}, "required": ["laneId"]}, "then": {"required": ["instructionSha256"]}}
+            ,{"if": {"properties": {"laneId": {"const": "B1_INDEPENDENT_AGENT_REVIEW"}}, "required": ["laneId"]}, "then": {"properties": {"semanticAdjudication": {"properties": {"authority": {"const": "HUMAN"}}}}}}
+            ,{"if": {"properties": {"laneId": {"enum": ["B0_EXISTING_CI", "B2_GENERATED_TESTS"]}}, "required": ["laneId"]}, "then": {"properties": {"semanticAdjudication": {"properties": {"authority": {"const": "DETERMINISTIC_RULE"}}}}}}
+          ]
+        }
+      ]
+    },
+    "catBinding": {
+      "allOf": [
+        {
+          "type": "object", "additionalProperties": false,
+          "required": ["version", "challengeId", "challengeProtocolSha256", "laneId", "laneVersion", "laneStatus", "evidencePath", "evidenceSha256", "decision"],
+          "properties": {
+            "version": {"const": "SingleCaseBaselineResultV1"}, "challengeId": {"const": "node-cache-ttl-zero-001"},
+            "challengeProtocolSha256": {"$ref": "#/$defs/sha256"}, "laneId": {"const": "B4_CAT"},
+            "laneVersion": {"type": "string", "minLength": 1}, "laneStatus": {"const": "BOUND_EXISTING_EVIDENCE"},
+            "evidencePath": {"const": "fixtures/public-evidence/node-cache-ttl-zero-001.rejected.json"},
+            "evidenceSha256": {"const": "dd9539a1663d29b01abfc0edf5f8bddf202b7830d05730a1db946e259269ce6a"},
+            "decision": {"const": "REJECTED"}
+          }
+        }
+      ]
+    }
+  }
+}

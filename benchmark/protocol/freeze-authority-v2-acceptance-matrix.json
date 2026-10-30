@@ -1,0 +1,203 @@
+{
+  "version": "FreezeAuthorityV2AcceptanceMatrix",
+  "rows": [
+    {
+      "id": "COMMIT_BLOB_IS_AUTHORITY",
+      "status": "PASS",
+      "implementationEvidence": "src/benchmark/freeze-authority-v2.ts:verifyV2CommitAuthority",
+      "testEvidence": "tests/freeze-authority-v2.test.ts:positive synthetic V2 authority loads from its full SHA with LF checkout and keeps the future tree self-contained"
+    },
+    {
+      "id": "COMMIT_GRAPH_IS_AUTHORITY",
+      "status": "PASS",
+      "implementationEvidence": "src/benchmark/freeze-authority-v2.ts:inventoryExecutableClosureAtCommit",
+      "testEvidence": "tests/freeze-authority-v2.test.ts:committed graph remains authoritative and same-size same-mtime semantic mutation is rejected"
+    },
+    {
+      "id": "TEMP_INDEX_MODELS_FUTURE_TREE",
+      "status": "PASS",
+      "implementationEvidence": "scripts/cat-prepare-freeze-authority-v2.ts",
+      "testEvidence": "tests/freeze-authority-v2.test.ts:positive synthetic V2 authority loads from its full SHA with LF checkout and keeps the future tree self-contained"
+    },
+    {
+      "id": "REAL_INDEX_UNCHANGED",
+      "status": "PASS",
+      "implementationEvidence": "src/benchmark/freeze-authority-v2.ts:prepareFreezeAuthorityV2",
+      "testEvidence": "tests/freeze-authority-v2.test.ts:positive synthetic V2 authority loads from its full SHA with LF checkout and keeps the future tree self-contained"
+    },
+    {
+      "id": "LF_CHECKOUT_ACCEPTED",
+      "status": "PASS",
+      "implementationEvidence": "src/benchmark/freeze-authority-v2.ts:verifyV2WorktreeEquivalence",
+      "testEvidence": "tests/freeze-authority-v2.test.ts:positive synthetic V2 authority loads from its full SHA with LF checkout and keeps the future tree self-contained"
+    },
+    {
+      "id": "CRLF_GIT_CLEAN_CHECKOUT_ACCEPTED",
+      "status": "PASS",
+      "implementationEvidence": "src/benchmark/freeze-authority-v2.ts:isolated normalized index comparison",
+      "testEvidence": "tests/freeze-authority-v2.test.ts:CRLF Git-clean checkout is accepted after Git normalization"
+    },
+    {
+      "id": "SEMANTIC_WORKTREE_MUTATION_REJECTED",
+      "status": "PASS",
+      "implementationEvidence": "src/benchmark/freeze-authority-v2.ts:verifyV2WorktreeEquivalence",
+      "testEvidence": "tests/freeze-authority-v2.test.ts:committed graph remains authoritative and same-size same-mtime semantic mutation is rejected"
+    },
+    {
+      "id": "STAGED_EXECUTABLE_MUTATION_REJECTED",
+      "status": "PASS",
+      "implementationEvidence": "src/benchmark/freeze-authority-v2.ts:assertCleanDiff",
+      "testEvidence": "tests/freeze-authority-v2.test.ts:staged executable mutation is rejected"
+    },
+    {
+      "id": "CUSTOM_CLEAN_FILTER_REJECTED",
+      "status": "PASS",
+      "implementationEvidence": "src/benchmark/freeze-authority-v2.ts:verifyAttributes",
+      "testEvidence": "tests/freeze-authority-v2.test.ts:custom filter and working-tree-encoding attributes fail closed before normalization"
+    },
+    {
+      "id": "WORKING_TREE_ENCODING_REJECTED",
+      "status": "PASS",
+      "implementationEvidence": "src/benchmark/freeze-authority-v2.ts:verifyAttributes",
+      "testEvidence": "tests/freeze-authority-v2.test.ts:custom filter and working-tree-encoding attributes fail closed before normalization"
+    },
+    {
+      "id": "SYMLINK_REJECTED",
+      "status": "PASS",
+      "implementationEvidence": "src/benchmark/freeze-authority-v2.ts:checkedWorkingPath and regular Git mode checks",
+      "testEvidence": "tests/freeze-authority-v2.test.ts:ancestor path check rejects a symlinked directory and paths outside the repository"
+    },
+    {
+      "id": "TRANSITIVE_IMPORT_MUTATION_REJECTED",
+      "status": "PASS",
+      "implementationEvidence": "src/benchmark/freeze-authority-v2.ts:inventoryExecutableClosureAtCommit",
+      "testEvidence": "tests/freeze-authority-v2.test.ts:committed graph remains authoritative and same-size same-mtime semantic mutation is rejected"
+    },
+    {
+      "id": "MISSING_TRANSITIVE_MODULE_REJECTED",
+      "status": "PASS",
+      "implementationEvidence": "src/benchmark/freeze-authority-v2.ts:resolveImport",
+      "testEvidence": "tests/freeze-authority-v2.test.ts:missing and unresolved committed imports are rejected"
+    },
+    {
+      "id": "UNRESOLVED_DYNAMIC_IMPORT_REJECTED",
+      "status": "PASS",
+      "implementationEvidence": "src/benchmark/freeze-authority-v2.ts:inventoryExecutableClosureAtCommit",
+      "testEvidence": "tests/freeze-authority-v2.test.ts:missing and unresolved committed imports are rejected"
+    },
+    {
+      "id": "COMMITTED_CLOSURE_ROW_TAMPER_REJECTED",
+      "status": "PASS",
+      "implementationEvidence": "src/benchmark/freeze-authority-v2.ts:closure row blob identity checks",
+      "testEvidence": "tests/freeze-authority-v2.test.ts:closure rows bind committed blob IDs and reject a row altered in a successor tree"
+    },
+    {
+      "id": "FAILED_V1_AUTHORITY_REJECTED",
+      "status": "PASS",
+      "implementationEvidence": "src/benchmark/freeze-authority-v2.ts:missing V2 manifest fails closed",
+      "testEvidence": "tests/freeze-authority-v2.test.ts:failed V1 commit is rejected by the production V2 load path without output creation"
+    },
+    {
+      "id": "POSITIVE_V2_AUTHORITY_LOAD_SUCCEEDS",
+      "status": "PASS",
+      "implementationEvidence": "src/benchmark/freeze-authority-v2.ts:loadFrozenControlsV2",
+      "testEvidence": "tests/freeze-authority-v2.test.ts:positive synthetic V2 authority loads from its full SHA with LF checkout and keeps the future tree self-contained"
+    },
+    {
+      "id": "V1_FALLBACK_NOT_ALLOWED",
+      "status": "PASS",
+      "implementationEvidence": "src/benchmark/controlled-candidate-generator.ts:generation and verification use V2",
+      "testEvidence": "tests/freeze-authority-v2.test.ts:failed V1 commit is rejected by the production V2 load path without output creation"
+    },
+    {
+      "id": "TRUSTED_RUNNER_EXECUTES_FROM_FREEZE_COMMIT",
+      "status": "PASS",
+      "implementationEvidence": "scripts/cat-trusted-freeze-runner-v2.ts:ensureTrustedRunner",
+      "testEvidence": "tests/cat-trusted-freeze-runner-v2.test.ts:detached runner preflight is freeze-bound, side-effect free, and leaves no worktree registration"
+    },
+    {
+      "id": "TRUSTED_RUNNER_HEAD_MUST_MATCH_FREEZE_SHA",
+      "status": "PASS",
+      "implementationEvidence": "scripts/cat-trusted-freeze-runner-v2.ts:ensureTrustedRunner",
+      "testEvidence": "tests/cat-trusted-freeze-runner-v2.test.ts:runner rejects invalid SHA, mismatched or dirty materialization, wrong target, and existing output"
+    },
+    {
+      "id": "MUTABLE_TARGET_VERIFIER_NOT_EXECUTION_AUTHORITY",
+      "status": "PASS",
+      "implementationEvidence": "scripts/cat-trusted-freeze-runner-v2.ts:freeze-bound runner import graph",
+      "testEvidence": "tests/cat-trusted-freeze-runner-v2.test.ts:detached runner preflight is freeze-bound, side-effect free, and leaves no worktree registration"
+    },
+    {
+      "id": "TARGET_WORKTREE_DRIFT_REJECTED",
+      "status": "PASS",
+      "implementationEvidence": "src/benchmark/freeze-authority-v2.ts:verifyV2WorktreeEquivalence",
+      "testEvidence": "tests/cat-trusted-freeze-runner-v2.test.ts:detached runner preflight is freeze-bound, side-effect free, and leaves no worktree registration"
+    },
+    {
+      "id": "TRUSTED_PREFLIGHT_HAS_NO_GENERATION_SIDE_EFFECT",
+      "status": "PASS",
+      "implementationEvidence": "src/benchmark/controlled-candidate-generator.ts:preflightControlledCandidate",
+      "testEvidence": "tests/cat-trusted-freeze-runner-v2.test.ts:detached runner preflight is freeze-bound, side-effect free, and leaves no worktree registration"
+    },
+    {
+      "id": "TRUSTED_GENERATE_MODE_REQUIRES_PREFLIGHT",
+      "status": "PASS",
+      "implementationEvidence": "scripts/cat-trusted-freeze-runner-v2.ts:mode generate calls preflight first",
+      "testEvidence": "tests/cat-trusted-freeze-runner-v2.test.ts:generate mode rejects drift before creating candidate output"
+    },
+    {
+      "id": "TRUSTED_RUNNER_INCLUDED_IN_EXECUTABLE_CLOSURE",
+      "status": "PASS",
+      "implementationEvidence": "src/benchmark/freeze-authority-v2.ts:FREEZE_V2_ENTRYPOINTS",
+      "testEvidence": "tests/cat-trusted-freeze-runner-v2.test.ts:V2 preparation binds the trusted runner and every artifact from its prepared tree"
+    },
+    {
+      "id": "RUNNER_TEMP_WORKTREE_REMOVED",
+      "status": "PASS",
+      "implementationEvidence": "scripts/Invoke-CatTrustedFreezeRunnerV2.ps1:finally cleanup",
+      "testEvidence": "tests/cat-trusted-freeze-runner-v2.test.ts:detached runner preflight is freeze-bound, side-effect free, and leaves no worktree registration"
+    },
+    {
+      "id": "SCIENTIFIC_MUTATION_UNCHANGED",
+      "status": "PASS",
+      "implementationEvidence": "benchmark/protocol/controlled-mutation-spec-v1.json unchanged",
+      "testEvidence": "tests/freeze-authority-v2.test.ts:matrix evidence names tests and scientific control bytes stay unchanged"
+    },
+    {
+      "id": "BUILD_CONTRACT_UNCHANGED",
+      "status": "PASS",
+      "implementationEvidence": "benchmark/protocol/controlled-build-contract-v1.json unchanged",
+      "testEvidence": "tests/freeze-authority-v2.test.ts:matrix evidence names tests and scientific control bytes stay unchanged"
+    },
+    {
+      "id": "SAME_CANDIDATE_PROTOCOL_UNCHANGED",
+      "status": "PASS",
+      "implementationEvidence": "benchmark/protocol/single-case-v2.json unchanged",
+      "testEvidence": "tests/freeze-authority-v2.test.ts:matrix evidence names tests and scientific control bytes stay unchanged"
+    },
+    {
+      "id": "NO_REAL_CANDIDATE_CREATED",
+      "status": "PASS",
+      "implementationEvidence": "no real generator invocation in implementation",
+      "testEvidence": "tests/freeze-authority-v2.test.ts:failed V1 commit is rejected by the production V2 load path without output creation"
+    },
+    {
+      "id": "NO_RESULT_OBSERVED",
+      "status": "PASS",
+      "implementationEvidence": "no benchmark lane or provider invoked",
+      "testEvidence": "tests/freeze-authority-v2.test.ts:positive synthetic V2 authority loads from its full SHA with LF checkout and keeps the future tree self-contained"
+    },
+    {
+      "id": "GENERATION_CONTRACT_SUPERSESSION_BOUND",
+      "status": "PASS",
+      "implementationEvidence": "benchmark/protocol/generation-contract-supersession-v1.json is a V2 control artifact and its fields are validated before generation",
+      "testEvidence": "tests/freeze-authority-v2.test.ts:generation contract supersession record is bound and validated as successor support"
+    },
+    {
+      "id": "POST_GENERATION_SUITE_SAFE",
+      "status": "PASS",
+      "implementationEvidence": "candidate absence is bound to generation authority and candidate presence is bound to the frozen artifact commit, independent of the mutable worktree",
+      "testEvidence": "tests/freeze-authority-v2.test.ts:post-generation lifecycle tests bind candidate absence to generation authority and reject substitution"
+    }
+  ]
+}

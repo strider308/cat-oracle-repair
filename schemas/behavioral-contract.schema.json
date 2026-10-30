@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://counterfactual-acceptance.local/schemas/behavioral-contract.schema.json",
+  "title": "Counterfactual Acceptance Behavioral Contract",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "authority", "actors", "entity", "initial_state", "attributes", "action", "environment", "expected_observations", "invariants", "preserved_behaviors", "unresolved"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "source_refs"],
+      "properties": {
+        "status": {"enum": ["DRAFT_FOR_HUMAN_REVIEW", "HUMAN_APPROVED", "AUTHORITATIVE_ARTIFACT"]},
+        "source_refs": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "actors": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "entity": {"type": "object", "additionalProperties": true, "required": ["type"]},
+    "initial_state": {"type": "object", "additionalProperties": true},
+    "attributes": {"type": "object", "additionalProperties": true},
+    "action": {"type": "object", "additionalProperties": true, "required": ["type", "actor"]},
+    "preconditions": {"type": "array", "items": {"type": "string"}, "default": []},
+    "environment": {"type": "object", "additionalProperties": true},
+    "expected_observations": {"type": "object", "additionalProperties": true, "required": ["response"]},
+    "invariants": {"type": "array", "items": {"type": "string"}},
+    "preserved_behaviors": {"type": "array", "items": {"type": "string"}},
+    "unresolved": {"type": "array", "items": {"type": "string"}}
+  }
+}

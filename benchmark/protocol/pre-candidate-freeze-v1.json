@@ -1,0 +1,32 @@
+{
+  "manifestVersion": "PreCandidateFreezeV1",
+  "status": "READY_FOR_OWNER_FREEZE_COMMIT",
+  "futureAnchor": "freezeCommitSha",
+  "artifacts": {
+    "benchmark/protocol/controlled-build-contract-v1.json": "a58471b286b8304c02de402161fd18770db1a16bbc8fc4d3e4c23f56094db708",
+    "benchmark/protocol/controlled-mutation-spec-v1.json": "9426b0807c14c1bc4a28e43fbd4af8446230f25eb20fd10069f19e9077807ab4",
+    "benchmark/protocol/controlled-profile-acceptance-matrix-v1.json": "48f58e625b2a98a1d6ee57724c0798f287d33bfb06c158168a433c00712e2284",
+    "benchmark/protocol/controlled-subject-profile-v1.json": "77b983443329fec271f15a78f222552c1a04a28c5c1a5b85a4a69b6509c3e62f",
+    "benchmark/protocol/single-case-v2.json": "75587dd3b1df312608364601affd1ec8343c16219e9e12f67f0297c9ac542388",
+    "benchmark/schemas/controlled-benchmark-subject-receipt-v1.schema.json": "6224a97dbc6a1675080c1b83259c5490e6c05e55c5c669c3df7b6382bd054b20",
+    "benchmark/schemas/controlled-challenge-manifest-v1.schema.json": "946eb96f22ee5bda624ba61de563515d1e45b83e7f3efb657e0084894b500659",
+    "benchmark/schemas/controlled-generation-evidence-v1.schema.json": "3c1a1d9381c46166ebefb56af3afb2e41129fc0fbc4d4321a57f45fe48b302b8",
+    "benchmark/schemas/controlled-subject-profile-v1.schema.json": "f3c1e2a97a1649fa14400a71a1816edf611023440f03001fc0617b2d69c70ec3",
+    "benchmark/schemas/single-case-result-v1.schema.json": "435757fbef66e068c5f6d0ccf5de7c8ec3ddcf30d16b2deb65fb0f3595eca442",
+    "benchmark/protocol/freeze-executable-closure-v1.json": "e41160c836fb81f8dba02e320e30588d5e2197330cb03f298fb7b9b98b40e98c"
+  },
+  "profileSha256": "77b983443329fec271f15a78f222552c1a04a28c5c1a5b85a4a69b6509c3e62f",
+  "mutationSpecSha256": "9426b0807c14c1bc4a28e43fbd4af8446230f25eb20fd10069f19e9077807ab4",
+  "buildContractSha256": "a58471b286b8304c02de402161fd18770db1a16bbc8fc4d3e4c23f56094db708",
+  "sameCandidateProtocolSha256": "75587dd3b1df312608364601affd1ec8343c16219e9e12f67f0297c9ac542388",
+  "acceptanceMatrixSha256": "48f58e625b2a98a1d6ee57724c0798f287d33bfb06c158168a433c00712e2284",
+  "dependencyIdentityVersion": "DependencyInventoryV1",
+  "dependencyIdentitySha256": "a0923da0a3195e2384bb2b56ffbcd45c891cd631cc28433ed464c27527980849",
+  "dependencyLockSha256": "21c448532a8e400504c800df67ad246d6d9461c7883fc7e68861d3960ebc3ce8",
+  "executionInfrastructureIdentitySha256": "1e99ea7352f8d8b195a4d8e0b3637ace24ecb044baa4870858914548d430c5c2",
+  "generatorSourceIdentitySha256": "f07e3ec83e490312716c783d38589e24074c4e150a335268a45f7ae3dd66dac2",
+  "controlledGateSourceIdentitySha256": "f07e3ec83e490312716c783d38589e24074c4e150a335268a45f7ae3dd66dac2",
+  "sameCandidateContractSha256": "75587dd3b1df312608364601affd1ec8343c16219e9e12f67f0297c9ac542388",
+  "executableClosureVersion": "FreezeExecutableClosureV1",
+  "executableClosureSha256": "f07e3ec83e490312716c783d38589e24074c4e150a335268a45f7ae3dd66dac2"
+}

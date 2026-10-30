@@ -1,0 +1,48 @@
+{
+  "id": "node-cache-ttl-zero-001",
+  "version": 2,
+  "clauses": {
+    "MUST_CHANGE": [
+      {
+        "id": "ttl-zero-refreshes-without-expiry",
+        "kind": "MUST_CHANGE",
+        "statement": "Calling ttl(key, 0) on an existing cache entry must preserve the entry without an expiry.",
+        "sourceIds": [
+          "source-v4-code",
+          "source-v4-api"
+        ],
+        "scope": "NodeCache.ttl(key, 0)",
+        "observableEvidence": "get(key) returns the value and getTtl(key) returns 0 after ttl(key, 0).",
+        "status": "SOURCE_SUPPORTED"
+      }
+    ],
+    "MUST_PRESERVE": [
+      {
+        "id": "ttl-zero-reports-existing-key",
+        "kind": "MUST_PRESERVE",
+        "statement": "Calling ttl on an existing, non-expired key returns true.",
+        "sourceIds": [
+          "source-v3-code",
+          "source-v4-code"
+        ],
+        "scope": "NodeCache.ttl(key, ttl)",
+        "observableEvidence": "ttl(key, 0) returns true.",
+        "status": "SOURCE_SUPPORTED"
+      }
+    ],
+    "MUST_NEVER": [
+      {
+        "id": "ttl-zero-never-deletes",
+        "kind": "MUST_NEVER",
+        "statement": "A zero TTL update must not delete an existing key.",
+        "sourceIds": [
+          "source-v4-code"
+        ],
+        "scope": "NodeCache.ttl(key, 0)",
+        "observableEvidence": "The key remains readable immediately after the call.",
+        "status": "SOURCE_SUPPORTED"
+      }
+    ],
+    "UNKNOWN": []
+  }
+}

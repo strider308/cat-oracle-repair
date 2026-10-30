@@ -1,0 +1,5 @@
+# Public source snapshot provenance
+
+Canonical private development source reported at commit `53a80fac269da2c363ede8d2f2dfce3467310321` (tree `103fd5d1b2a2f0277a07be7524b0a6a66729f367`). This public snapshot was assembled from the `0885062` reviewed source archive plus the three uploaded edited files reported in the subsequent diff. It has additional license, attribution and provenance edits; **do not treat its ZIP hash or Git commit as the private canonical source SHA**.
+
+It excludes `.git` history, ignored evidence, installed dependencies and `evidence/recovery/p03-v2-recovery-inventory.json` from the reviewed source candidate because that file exposed local machine paths. Source-only release is offered with MIT for CAT-original code and retained third-party notices. Historical P03 evidence remains incomplete and P04 omitted from the public Console. The Nemotron proposal runner includes four labeled **simulation** examples; **zero live inference POSTs were performed** in the supplied case records. Do not claim sponsor integration eligibility from simulations or model-list GET.

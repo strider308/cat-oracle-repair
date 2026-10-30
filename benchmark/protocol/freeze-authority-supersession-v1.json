@@ -1,0 +1,23 @@
+{
+  "version": "FreezeAuthoritySupersessionV1",
+  "failedFreezeCommitSha": "cd272debfde43ea3dfbdb39b16a47b97341e0218",
+  "status": "INVALID_BEFORE_GENERATION",
+  "reason": "EXECUTABLE_CLOSURE_COMMIT_BINDING_INVALID",
+  "mismatches": [
+    {
+      "path": "src/core/receipt.ts",
+      "recordedSha256": "1791da75d87f8eaf004752b6dbd5a5c80c79b34e33a8ddbc59dbf3e8cfcbe61d",
+      "commitBlobSha256": "89793409df325c5dc1a9a3c983a8d9d138f306068a1d2e9acae41668063f071b"
+    },
+    {
+      "path": "src/core/result.ts",
+      "recordedSha256": "3182efe2617a00087826bbcc391243edfdbb63aa91fc18dc26bab805e43766f1",
+      "commitBlobSha256": "0f0dc03500fc1cc20c123874a48d02a733b49af0958eea3d5fa89ef1542e976f"
+    }
+  ],
+  "generatorInvocations": 0,
+  "realMutationExecuted": false,
+  "candidateCreated": false,
+  "competitiveResultsObserved": false,
+  "successorFreezeCommitSha": null
+}

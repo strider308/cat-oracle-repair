@@ -1,0 +1,6 @@
+{
+  "status": "SYNTHETIC_DRAFT",
+  "contractId": "synthetic-idempotency-once-v1",
+  "statement": "Applying the same valid operation ID twice changes the balance only once; a valid operation of 5 from balance 0 ends at balance 5. Non-positive amounts are rejected without changing state.",
+  "caseScope": "Self-owned synthetic fixture only; not a human-approved product specification."
+}

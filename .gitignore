@@ -1,0 +1,28 @@
+node_modules/
+dist/
+coverage/
+.env
+.env.*
+!.env.example
+.DS_Store
+
+# Evaluation hygiene: held-out probes and private evaluator assets never enter builder-visible Git history.
+evaluator-private/
+benchmark/private/
+benchmark/results/*.json
+!benchmark/results/.gitkeep
+
+# Local recordings / exports
+recordings/
+*.log
+
+.agent-runs/
+.verification-runs/
+evidence/hero/*.json
+evidence/oracle/*.json
+evidence/sealed/*.json
+evidence/sealed-private/
+evidence/p03-replays/
+evidence/p03-receipts/*.json
+evidence/p03-subject-receipts/*.json
+evidence/manifests/p03-supersession-*.json

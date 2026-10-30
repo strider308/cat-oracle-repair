@@ -1,0 +1,30 @@
+{
+  "protocolVersion": "SingleCaseProtocolV2",
+  "status": "READY_FOR_OWNER_FREEZE_REVIEW",
+  "challengeId": "node-cache-ttl-zero-001",
+  "comparableLanes": ["B0", "B1", "B2", "B4"],
+  "commonRequiredBindings": [
+    "challengeId",
+    "freezeCommitSha",
+    "profileSha256",
+    "mutationSpecSha256",
+    "sourceCandidateHash",
+    "runtimeCandidateHash",
+    "generationEvidenceSha256"
+  ],
+  "laneRequirements": {
+    "B0": "SingleCaseBindingV2",
+    "B1": "SingleCaseBindingV2",
+    "B2": "SingleCaseBindingV2",
+    "B4": "SingleCaseBindingV2"
+  },
+  "candidateSubstitution": "PROHIBITED",
+  "historicalCandidate143ccbAllowed": false,
+  "survivorS1Allowed": false,
+  "alternateMutationAllowed": false,
+  "alternateRuntimeBuildAllowed": false,
+  "successfulSemanticRerunForSelection": false,
+  "operationalRetriesMaximum": 1,
+  "b3Availability": "NOT_AVAILABLE_IN_FROZEN_REPOSITORY",
+  "futureCandidateHashes": "REQUIRED_BUT_NOT_YET_AVAILABLE"
+}

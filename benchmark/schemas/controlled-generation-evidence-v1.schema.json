@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ControlledGenerationEvidenceV1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "evidenceVersion", "sourceIdentityAlgorithm", "runtimeIdentityAlgorithm", "freezeCommitSha", "profileSha256", "mutationSpecSha256",
+    "buildContractSha256", "sourceCandidateHash", "runtimeCandidateHash", "runtimeManifestSha256", "dependencyIdentitySha256",
+    "dependencyLockSha256", "executionInfrastructureIdentitySha256", "changedPaths", "changeBindings", "generationEvidenceSha256"
+  ],
+  "properties": {
+    "evidenceVersion": {"const": "ControlledGenerationEvidenceV1"},
+    "sourceIdentityAlgorithm": {"const": "SourceInventoryV1"},
+    "runtimeIdentityAlgorithm": {"const": "RuntimeInventoryV1"},
+    "freezeCommitSha": {"type": "string", "pattern": "^[a-f0-9]{40}$"},
+    "profileSha256": {"$ref": "#/$defs/hash"},
+    "mutationSpecSha256": {"$ref": "#/$defs/hash"},
+    "buildContractSha256": {"$ref": "#/$defs/hash"},
+    "sourceCandidateHash": {"$ref": "#/$defs/hash"},
+    "runtimeCandidateHash": {"$ref": "#/$defs/hash"},
+    "runtimeManifestSha256": {"$ref": "#/$defs/hash"},
+    "dependencyIdentitySha256": {"$ref": "#/$defs/hash"},
+    "dependencyLockSha256": {"$ref": "#/$defs/hash"},
+    "executionInfrastructureIdentitySha256": {"$ref": "#/$defs/hash"},
+    "changedPaths": {"type": "array", "const": ["_src/lib/node_cache.coffee"]},
+    "changeBindings": {"type": "array", "minItems": 1, "maxItems": 1, "items": {"type": "object", "additionalProperties": false,
+      "required": ["path", "baseSha256", "resultSha256"], "properties": {"path": {"const": "_src/lib/node_cache.coffee"},
+        "baseSha256": {"$ref": "#/$defs/hash"}, "resultSha256": {"$ref": "#/$defs/hash"}}}},
+    "generationEvidenceSha256": {"$ref": "#/$defs/hash"}
+  },
+  "$defs": {"hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}
+}

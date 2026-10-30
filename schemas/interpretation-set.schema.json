@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://counterfactual-acceptance.local/schemas/interpretation-set.schema.json",
+  "title": "Counterfactual Acceptance Interpretation Set",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["contract_id", "approved", "alternatives"],
+  "properties": {
+    "contract_id": {"type": "string"},
+    "approved": {"$ref": "behavioral-contract.schema.json"},
+    "alternatives": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "origin", "ambiguity_type", "summary", "plausibility_rationale", "materiality", "behavioral_delta", "reachability", "status", "human_review"],
+        "properties": {
+          "id": {"type": "string"},
+          "origin": {"enum": ["LLM_PROPOSED", "HISTORICAL_BUG", "HUMAN_PROPOSED", "SEEDED_RESEARCH_FIXTURE"]},
+          "ambiguity_type": {"type": "string"},
+          "summary": {"type": "string"},
+          "plausibility_rationale": {"type": "string"},
+          "materiality": {"enum": ["LOW", "MEDIUM", "HIGH", "CRITICAL"]},
+          "behavioral_delta": {"type": "object", "additionalProperties": true},
+          "reachability": {"enum": ["REACHABLE", "UNREACHABLE", "UNKNOWN"]},
+          "status": {"enum": ["PLAUSIBLE", "REJECTED", "EQUIVALENT", "UNRESOLVED", "UNSUPPORTED"]},
+          "human_review": {"enum": ["PENDING", "APPROVED", "REJECTED"]}
+        }
+      }
+    }
+  }
+}

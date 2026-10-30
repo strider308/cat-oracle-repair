@@ -1,0 +1,17 @@
+{
+  "manifestVersion": "ControlledChallengeManifestV1",
+  "challengeId": "node-cache-ttl-zero-001",
+  "freezeCommitSha": "5069680ff093695a227bf410eb3de88d99dce9e7",
+  "profileSha256": "77b983443329fec271f15a78f222552c1a04a28c5c1a5b85a4a69b6509c3e62f",
+  "mutationSpecSha256": "9426b0807c14c1bc4a28e43fbd4af8446230f25eb20fd10069f19e9077807ab4",
+  "buildContractSha256": "a58471b286b8304c02de402161fd18770db1a16bbc8fc4d3e4c23f56094db708",
+  "baseSourceTreeSha256": "648808475cfc0232a629a530be6a241dc474ad0df7c36fe71679ddc343fc0c01",
+  "sourceCandidateHash": "80424bd379df4a836680d5ca420289c7e080a24377e61947a393f01c08d0a8c1",
+  "runtimeCandidateHash": "fc594a965abb22c1542d7b887a8490244454d0c9ba51e16babeaeabf456e7621",
+  "generationEvidenceSha256": "1d5e9133c0ad612a5e629859530548e1239c68c451df322544ec3bb598ab7f10",
+  "dependencyIdentitySha256": "a0923da0a3195e2384bb2b56ffbcd45c891cd631cc28433ed464c27527980849",
+  "executionInfrastructureIdentitySha256": "1e99ea7352f8d8b195a4d8e0b3637ace24ecb044baa4870858914548d430c5c2",
+  "changedPaths": [
+    "_src/lib/node_cache.coffee"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "recordVersion": "GenerationContractSupersessionV1",
+  "supersededFreezeCommitSha": "75f8b6ad870c3f385f793d5c77a44b3301d1cc8e",
+  "authorityStatus": "VALID",
+  "generationStatus": "NOT_EXECUTED",
+  "status": "SUPERSEDED_BEFORE_GENERATION",
+  "reason": "FROZEN_GENERATOR_DID_NOT_EMIT_REQUIRED_SEPARATE_ROOT_SOURCE_AND_FULL_GENERATION_REPRODUCIBILITY_EVIDENCE",
+  "trustedGenerateInvocationCount": 0,
+  "realMutationExecuted": false,
+  "candidateCreated": false,
+  "competitiveResultsObserved": false,
+  "successorFreezeCommitSha": null
+}

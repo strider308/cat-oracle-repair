@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["profileVersion", "caseId", "status", "maliciousCodeIsolationClaim", "arbitraryExternalSubjectSupport", "candidateCreated", "competitiveLanesExecuted", "candidateId", "candidateBundleRoot", "candidateSourceRoot", "candidateRoot", "reproductionSourceRoot", "reproductionRuntimeRoot", "mutationSpecPath", "mutationSpecSha256", "acceptanceMatrixPath", "acceptanceMatrixSha256", "generatorContract", "base", "dependencyIdentity", "executionInfrastructure", "controlledExecutionInfrastructureV2", "controlledProfileRequirements", "productionSandboxGaps"],
+  "properties": {
+    "profileVersion": {"const": "ControlledBenchmarkSubjectProfileV1"},
+    "caseId": {"const": "node-cache-ttl-zero-001"},
+    "status": {"const": "READY_FOR_OWNER_FREEZE_REVIEW"},
+    "maliciousCodeIsolationClaim": {"const": false},
+    "arbitraryExternalSubjectSupport": {"const": "NOT_APPROVED"},
+    "candidateCreated": {"const": false},
+    "competitiveLanesExecuted": {"const": false},
+    "candidateId": {"const": "dp05b-controlled-v1"},
+    "candidateBundleRoot": {"const": "fixtures/hero/node-cache-ttl-zero-001/candidates/dp05b-controlled-v1"},
+    "candidateSourceRoot": {"const": "fixtures/hero/node-cache-ttl-zero-001/candidates/dp05b-controlled-v1/source"},
+    "candidateRoot": {"const": "fixtures/hero/node-cache-ttl-zero-001/candidates/dp05b-controlled-v1/runtime"},
+    "reproductionSourceRoot": {"const": "fixtures/hero/node-cache-ttl-zero-001/candidates/dp05b-controlled-v1/reproduction/source"},
+    "reproductionRuntimeRoot": {"const": "fixtures/hero/node-cache-ttl-zero-001/candidates/dp05b-controlled-v1/reproduction/runtime"},
+    "mutationSpecPath": {"const": "benchmark/protocol/controlled-mutation-spec-v1.json"},
+    "mutationSpecSha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "acceptanceMatrixPath": {"const": "benchmark/protocol/controlled-profile-acceptance-matrix-v1.json"},
+    "acceptanceMatrixSha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "generatorContract": {"type": "object", "required": ["contractVersion", "implementationStatus", "generatorPath", "requiredOperations", "requiredOutputs", "noPostGenerationChanges"]},
+    "base": {"type": "object", "required": ["sourceRoot", "sourceTreeInventoryAlgorithm", "sourceTreeFileCount", "sourceTreeSha256", "sourceTree", "lockfilePath", "lockfileSha256", "expectedRuntimeFiles"]},
+    "dependencyIdentity": {"type": "object", "required": ["root", "inventoryAlgorithm", "fileCount", "inventorySha256", "lockfileSha256"]},
+    "executionInfrastructure": {"type": "object", "required": ["identitySha256", "class", "adapterPath", "adapterSha256", "executorPath", "executorSha256", "descriptor", "containerImageDigest", "networkProfile", "mountProfile", "containerUser", "readOnlyRoot", "capabilities", "noNewPrivileges", "resourceLimits"]},
+    "controlledExecutionInfrastructureV2": {"type": "object", "required": ["identityVersion", "subjectAdapterPath", "subjectAdapterSha256", "executorPath", "executorSha256", "containerImageDigest", "dependencyInventoryVersion", "dependencyIdentitySha256", "dependencyLockSha256", "buildContractPath", "buildContractSha256", "network", "mountProfile", "readOnlyRoot", "containerUser", "capDrop", "noNewPrivileges", "nodeRuntimeVersion", "identitySha256"], "properties": {"identitySha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}, "buildContractSha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}},
+    "controlledProfileRequirements": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+    "productionSandboxGaps": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}}
+  }
+}

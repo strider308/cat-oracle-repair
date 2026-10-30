@@ -1,0 +1,1 @@
+{"id":"ORACLE_V1","observes":["ttlReturned","found","value"],"expected":{"ttlReturned":true,"found":true,"value":"value"}}

@@ -1,0 +1,104 @@
+{
+  "sourceTrees": {
+    "v3": "867af2a49f8527852e202ea5c30bf6c00a8ca363ea407b2455c1d44198cbef52",
+    "v4": "648808475cfc0232a629a530be6a241dc474ad0df7c36fe71679ddc343fc0c01"
+  },
+  "candidates": {
+    "wrong": {
+      "candidateSha": "d54f47f8fba0d998a6cacd0ebd9adee263eff426224356fb239110cc3059d980",
+      "runtime": [
+        {
+          "path": "index.js",
+          "sha256": "61beb037d6f5de6a92e5732a31405273c31ac82c9570be6332e2e39cd3f56e90"
+        },
+        {
+          "path": "lib/node_cache.js",
+          "sha256": "270341b0868ac20d09281b3377e52578b95f980d1ae52b77185081a4ad602089"
+        }
+      ],
+      "sourceTreeSha256": "867af2a49f8527852e202ea5c30bf6c00a8ca363ea407b2455c1d44198cbef52",
+      "v1": {
+        "ttlReturned": true,
+        "found": false,
+        "value": null,
+        "expiresAt": null
+      },
+      "v2": {
+        "ttlReturned": true,
+        "found": false,
+        "value": null,
+        "expiresAt": null
+      }
+    },
+    "good": {
+      "candidateSha": "164a5b47345933187e28f11355cce49d9012347320997f4e44ae4bec34055380",
+      "runtime": [
+        {
+          "path": "index.js",
+          "sha256": "1f1a1b70f8b5ca46a70c7c1b29e8acc84ae82e7ac88c26caada3863de9daf095"
+        },
+        {
+          "path": "lib/node_cache.js",
+          "sha256": "9fe726ef8dece7acae8f4c6eca2044e577a699cd0ce94c9ef5a39bfe59c549d4"
+        }
+      ],
+      "sourceTreeSha256": "648808475cfc0232a629a530be6a241dc474ad0df7c36fe71679ddc343fc0c01",
+      "v1": {
+        "ttlReturned": true,
+        "found": true,
+        "value": "value",
+        "expiresAt": 0
+      },
+      "v2": {
+        "ttlReturned": true,
+        "found": true,
+        "value": "value",
+        "expiresAt": 0
+      }
+    },
+    "equivalent": {
+      "candidateSha": "22b241b1a9b9469f81bb5cee6ecbd0b0da72fcf8aac77846856802519176be73",
+      "runtime": [
+        {
+          "path": "index.js",
+          "sha256": "a2edbc7a5b1f182c8f348231b6b8d8b76427211ca115fd054a93455f290963b4"
+        }
+      ],
+      "sourceTreeSha256": null,
+      "v1": {
+        "ttlReturned": true,
+        "found": true,
+        "value": "value",
+        "expiresAt": 0
+      },
+      "v2": {
+        "ttlReturned": true,
+        "found": true,
+        "value": "value",
+        "expiresAt": 0
+      }
+    },
+    "survivor": {
+      "candidateSha": "967c8eb3a1aa287c97f0fa790a4499888d84b84010a64df49664e8f87e8ba296",
+      "runtime": [
+        {
+          "path": "index.js",
+          "sha256": "d09af9b778506ba6997eaf9ccde63bb445eb0099d4e76da99bd7e6840b235ac8"
+        }
+      ],
+      "sourceTreeSha256": null,
+      "v1": {
+        "ttlReturned": true,
+        "found": true,
+        "value": "value",
+        "expiresAt": 1791309871743
+      },
+      "v2": {
+        "ttlReturned": true,
+        "found": true,
+        "value": "value",
+        "expiresAt": 1791309872420
+      }
+    }
+  }
+}

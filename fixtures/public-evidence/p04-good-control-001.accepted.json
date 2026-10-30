@@ -1,0 +1,43 @@
+{
+  "aggregateRunDecision": "REJECTED",
+  "blindChallengeCount": 1,
+  "candidateAccepted": true,
+  "case": {
+    "headline": "The verified good control passed public and blinded checks.",
+    "id": "p04-good-control-001",
+    "title": "Verified P04 good control lane"
+  },
+  "decision": "ACCEPTED",
+  "evidenceKind": "VERIFIED_EXECUTED_CONTROL",
+  "existingSuite": "NOT_APPLICABLE",
+  "historicalRun": true,
+  "lane": {
+    "decision": "ACCEPTED",
+    "id": "good",
+    "projectionManifestSha256": "e537b40732d351626cb4fa6819c6107958625e9c42ec74a3308ac276a5939e11"
+  },
+  "privacy": {
+    "omittedClasses": [
+      "private-evidence",
+      "holdout-challenge-content",
+      "candidate-source",
+      "model-provenance",
+      "execution-backend-provenance"
+    ],
+    "publicSafe": true
+  },
+  "results": {
+    "public": "PASS",
+    "sealed": "PASS"
+  },
+  "schema": "PublicExecutedControlV1",
+  "sealBeforeExecution": true,
+  "sourceReceipt": {
+    "canonicalReceiptHash": "6c9c91a43d39c8f742513e2a5836dd32b44b4971672c97653ba2f02a98469f42",
+    "fileSha256": "6a47c6a59d6d9f5a403bacb07472c3621885b07d950355b8611b26a1e0be3d58",
+    "path": "evidence/sealed/835caa06-aba0-413b-a6b2-df2efb47cb96.json",
+    "runId": "835caa06-aba0-413b-a6b2-df2efb47cb96"
+  },
+  "verifierImplementationFileSha256": "47cfa8c7d54a1efa43076d4267194e4897027dfbddb0efdf2a73e5f2d4aa7f4a",
+  "version": 1
+}

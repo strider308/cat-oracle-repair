@@ -1,0 +1,120 @@
+{
+  "authority": {
+    "authorityStatus": "CONTRADICTED",
+    "expectedBehavior": "Calling ttl(key, 0) on an existing cache entry must preserve the entry without an expiry.",
+    "observedBehavior": "ttl(key, 0) returned true, but the key was not found and its value was null."
+  },
+  "candidate": {
+    "candidateHash": "143ccb56526e031511a693f2be5d01d1c4ceac915195835c7703b8f4e244b43c",
+    "changedPaths": [
+      "_src/lib/node_cache.coffee"
+    ],
+    "frozen": false,
+    "frozenCandidateHash": null,
+    "patchSha256": "a68fc186740ce7fee329b8ac8f6e4b2a303ab71c640839d74e6c7522e78b4968"
+  },
+  "case": {
+    "category": "CACHE_SEMANTICS",
+    "headline": "Existing tests were green. CAT still rejected the AI patch.",
+    "id": "node-cache-ttl-zero-001",
+    "synthetic": false,
+    "title": "Zero TTL must not delete an existing cache entry."
+  },
+  "ci": {
+    "existingSuite": "PASS"
+  },
+  "decision": {
+    "candidateAccepted": false,
+    "decision": "REJECTED",
+    "jobStatus": "COMPLETED",
+    "reasonCodes": [
+      "PUBLIC_CONTRACT_FAILURE",
+      "PUBLIC_ORACLE_V2_FAILURE"
+    ],
+    "summary": "The existing suite passed, but both public behavior gates found the candidate contradicted the approved zero-TTL behavior."
+  },
+  "execution": {
+    "backend": "LOCAL_DOCKER_FALLBACK",
+    "providerClaim": "Candidate validation ran in isolated local Docker; Nemotron inference ran through Nebius Token Factory.",
+    "sandboxStatus": "CLIENT_UNAVAILABLE"
+  },
+  "gates": [
+    {
+      "failureKind": "NONE",
+      "id": "build",
+      "label": "Candidate build",
+      "reasonCode": null,
+      "result": "PASS"
+    },
+    {
+      "failureKind": "NONE",
+      "id": "existing-suite",
+      "label": "Existing test suite",
+      "reasonCode": null,
+      "result": "PASS"
+    },
+    {
+      "failureKind": "SEMANTIC",
+      "id": "public-contract",
+      "label": "Public contract",
+      "reasonCode": "PUBLIC_CONTRACT_FAILURE",
+      "result": "FAIL"
+    },
+    {
+      "failureKind": "SEMANTIC",
+      "id": "public-oracle-v2",
+      "label": "Calibrated oracle",
+      "reasonCode": "PUBLIC_ORACLE_V2_FAILURE",
+      "result": "FAIL"
+    }
+  ],
+  "hiddenVerification": {
+    "blindResult": "NOT_RUN",
+    "challengeCount": 0,
+    "explanation": "CANDIDATE_REJECTED_BEFORE_HOLDOUT",
+    "state": "NOT_CREATED"
+  },
+  "inference": {
+    "finishReason": "stop",
+    "model": "nvidia/nemotron-3-super-120b-a12b",
+    "networkAttempts": 1,
+    "operationId": null,
+    "proven": true,
+    "provider": "Nebius",
+    "requestId": "bd88b15bda53fd59fd337bb6bbde1475"
+  },
+  "integrity": {
+    "evidenceState": "DERIVED_VERIFIED",
+    "experimentIntegrity": "INCOMPLETE",
+    "verification": "DERIVED_VERIFIED"
+  },
+  "intervention": {
+    "counterfactualSummary": "A zero-TTL update could return success while deleting a key that should remain available.",
+    "reason": "Existing tests did not cover the zero-TTL behavior.",
+    "triggered": true
+  },
+  "privacy": {
+    "omittedClasses": [
+      "credentials",
+      "raw-model-io",
+      "private-holdout",
+      "private-evidence-bodies",
+      "private-receipts",
+      "candidate-source",
+      "local-environment",
+      "docker-host-paths",
+      "secret-file-paths"
+    ],
+    "publicSafe": true
+  },
+  "provenance": {
+    "derivedReceiptVerified": true,
+    "historicalRunId": "3fed7a48-c95d-42f2-ac83-714c2dbde528",
+    "historicalRunManifestSha256": "b6ac5dcb25213c448db56e6c880a5a0fc22966483f19979fb484d03c2071199b",
+    "originalReceiptStatus": "MALFORMED_RECOVERED_DERIVATIVE",
+    "publicReceiptSha256": "5afedd83a0bc9371451cd4b87af0db5c6c70c81115d137a8783631c1809076d6",
+    "sourceImplementationSha": "32e2a0097d4e203b2d18246c27c3fa06188ca9c7",
+    "verifierImplementationSha": "8da3722dad6852c0652f320da5b101aecdd71e15"
+  },
+  "version": 1
+}

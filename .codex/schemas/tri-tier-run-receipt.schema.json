@@ -1,0 +1,160 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Tri-Tier Run Receipt",
+  "type": "object",
+  "required": [
+    "policyVersion",
+    "sessionId",
+    "turnId",
+    "recommendedTier",
+    "selectedTier",
+    "taskMode",
+    "completionStatus",
+    "acceptanceCriteriaMet",
+    "validations",
+    "remainingRisks"
+  ],
+  "properties": {
+    "policyVersion": {
+      "type": "string"
+    },
+    "sessionId": {
+      "type": "string"
+    },
+    "turnId": {
+      "type": "string"
+    },
+    "promptHash": {
+      "type": "string"
+    },
+    "repositoryRoot": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "contextIdentityVersion": {
+      "const": 1
+    },
+    "hostWorkspaceRoot": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "projectRepositoryRoot": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "contextKind": {
+      "enum": [
+        "project",
+        "projectless",
+        null
+      ]
+    },
+    "recommendedTier": {
+      "enum": [
+        "luna",
+        "terra",
+        "sol"
+      ]
+    },
+    "selectedTier": {
+      "enum": [
+        "luna",
+        "terra",
+        "sol"
+      ]
+    },
+    "taskMode": {
+      "enum": [
+        "advisory",
+        "read_only",
+        "implementation",
+        "unknown"
+      ]
+    },
+    "completionStatus": {
+      "enum": [
+        "in_progress",
+        "completed",
+        "blocked",
+        "human_review"
+      ]
+    },
+    "acceptanceCriteriaMet": {
+      "type": "boolean"
+    },
+    "agentsUsed": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "validations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "name",
+          "status"
+        ],
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "pass",
+              "fail",
+              "not_applicable"
+            ]
+          },
+          "command": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "exitCode": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "reason": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "logPath": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "remainingRisks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "humanApprovalRequired": {
+      "type": "boolean"
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

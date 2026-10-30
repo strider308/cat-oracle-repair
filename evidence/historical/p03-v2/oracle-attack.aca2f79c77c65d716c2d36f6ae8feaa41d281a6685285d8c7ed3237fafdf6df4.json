@@ -1,0 +1,23 @@
+{
+  "oracleV1Hash": "4fbf4c5cbcc19b054e916800537c3ac77fdf2c6c3907a56cb5e29873b67b5722",
+  "survivorId": "S1-preserve-finite-expiry",
+  "survivorCandidateHash": "967c8eb3a1aa287c97f0fa790a4499888d84b84010a64df49664e8f87e8ba296",
+  "violatedClauseIds": [
+    "ttl-zero-refreshes-without-expiry"
+  ],
+  "survivorV1Result": "PASS",
+  "oracleStatusBeforeRefinement": "WEAK",
+  "v1Observations": {
+    "ttlReturned": true,
+    "found": true,
+    "value": "value",
+    "expiresAt": 1791309871743
+  },
+  "oracleV2Hash": "72cb331c0d7f8ea85f8ff96625f329764bbcbdd784762e59b22e5c0c35c55231",
+  "survivorV2Result": "FAIL",
+  "knownGoodV2Result": "PASS",
+  "equivalentV2Result": "PASS",
+  "knownWrongV1Result": "FAIL",
+  "knownWrongV2Result": "FAIL",
+  "finalOracleStatus": "CALIBRATED"
+}

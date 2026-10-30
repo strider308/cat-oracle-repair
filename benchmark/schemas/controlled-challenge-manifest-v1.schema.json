@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ControlledChallengeManifestV1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "manifestVersion", "challengeId", "freezeCommitSha", "profileSha256", "mutationSpecSha256",
+    "buildContractSha256", "baseSourceTreeSha256", "sourceCandidateHash", "runtimeCandidateHash",
+    "generationEvidenceSha256", "dependencyIdentitySha256", "executionInfrastructureIdentitySha256", "changedPaths"
+  ],
+  "properties": {
+    "manifestVersion": {"const": "ControlledChallengeManifestV1"},
+    "challengeId": {"const": "node-cache-ttl-zero-001"},
+    "freezeCommitSha": {"type": "string", "pattern": "^[a-f0-9]{40}$"},
+    "profileSha256": {"$ref": "#/$defs/hash"},
+    "mutationSpecSha256": {"$ref": "#/$defs/hash"},
+    "buildContractSha256": {"$ref": "#/$defs/hash"},
+    "baseSourceTreeSha256": {"$ref": "#/$defs/hash"},
+    "sourceCandidateHash": {"$ref": "#/$defs/hash"},
+    "runtimeCandidateHash": {"$ref": "#/$defs/hash"},
+    "generationEvidenceSha256": {"$ref": "#/$defs/hash"},
+    "dependencyIdentitySha256": {"$ref": "#/$defs/hash"},
+    "executionInfrastructureIdentitySha256": {"$ref": "#/$defs/hash"},
+    "changedPaths": {"type": "array", "const": ["_src/lib/node_cache.coffee"]}
+  },
+  "$defs": {"hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}
+}

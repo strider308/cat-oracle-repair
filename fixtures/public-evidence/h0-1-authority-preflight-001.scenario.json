@@ -1,0 +1,14 @@
+{
+  "scenarioId": "H0-1",
+  "caseId": "h0-1-authority-preflight-001",
+  "decision": "HUMAN_REQUIRED",
+  "candidateAccepted": false,
+  "completionStatus": "COMPLETED",
+  "authorityStatus": "AMBIGUOUS",
+  "reason": "AUTHORITY_AMBIGUOUS",
+  "execution": "NOT_RUN",
+  "hiddenVerification": "NOT_APPLICABLE",
+  "historicalRun": false,
+  "operationalFailure": false,
+  "modelInference": "NOT_RUN"
+}

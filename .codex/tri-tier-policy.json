@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "policyVersion": "1.0.0",
+  "adopted": true,
+  "project": "counterfactual-acceptance",
+  "defaultOwner": "terra",
+  "strictAgentProfiles": true,
+  "stopGateMode": "strict-once",
+  "authorityDocuments": [
+    "README.md",
+    "AGENTS.md"
+  ],
+  "mandatorySolTriggers": [
+    "security or privacy boundary changes",
+    "production or destructive operations",
+    "repository-wide architecture",
+    "repeated validation failure",
+    "conflicting high-impact evidence"
+  ],
+  "lunaAllowedWork": [
+    "repository inventory",
+    "classification and extraction",
+    "format conversion",
+    "test fixture generation",
+    "bounded repetitive edits"
+  ],
+  "validationCommands": [
+    {
+      "name": "test",
+      "command": "npm run test",
+      "required": true
+    }
+  ],
+  "humanApprovalRequiredFor": [
+    "production deployment",
+    "destructive data operation",
+    "credential rotation",
+    "external communication with legal or financial effect"
+  ],
+  "projectRules": [],
+  "generatedRuntimeArtifacts": {
+    "directory": ".agent-runs/",
+    "mustBeGitignored": true
+  }
+}

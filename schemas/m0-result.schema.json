@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "M0 Falsification Result",
+  "type": "object",
+  "required": ["case_id", "ordinary_suite_green", "survivors", "baseline", "human_review", "timing"],
+  "properties": {
+    "case_id": {"type": "string"},
+    "ordinary_suite_green": {"type": ["boolean", "null"]},
+    "survivors": {"type": "array"},
+    "baseline": {"type": "object"},
+    "human_review": {"type": "object"},
+    "timing": {"type": "object"},
+    "model_cost": {"type": ["number", "null"]},
+    "false_alarms": {"type": "array"},
+    "promotion_signal": {"enum": ["PASS", "FAIL", "PENDING"]}
+  }
+}

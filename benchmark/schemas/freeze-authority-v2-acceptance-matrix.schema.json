@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FreezeAuthorityV2AcceptanceMatrix",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "rows"],
+  "properties": {
+    "version": {"const": "FreezeAuthorityV2AcceptanceMatrix"},
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "status", "implementationEvidence", "testEvidence"],
+        "properties": {
+          "id": {"type": "string"},
+          "status": {"enum": ["PASS", "PARTIAL", "MISSING"]},
+          "implementationEvidence": {"type": "string", "minLength": 1},
+          "testEvidence": {"type": "string", "minLength": 1}
+        }
+      }
+    }
+  }
+}

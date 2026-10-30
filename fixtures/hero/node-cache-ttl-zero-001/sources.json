@@ -1,0 +1,46 @@
+[
+  {
+    "id": "source-v3-code",
+    "kind": "official_source",
+    "url": "https://github.com/node-cache/node-cache/blob/bc49b373396cdbe4c1de612b866b4fece4c8471e/_src/lib/node_cache.coffee",
+    "version": "3.2.1 / bc49b373396cdbe4c1de612b866b4fece4c8471e",
+    "retrievedAt": "2026-10-06",
+    "artifactPath": "suite/source/_src/lib/node_cache.coffee",
+    "artifactSha256": "949200dc3afdc0ee284af021b757c0f8f8d52a466f17f6b1859958e6932544ce",
+    "supportingSpan": "@del( key )",
+    "supportingSpanSha256": "6faf06e6e1e3d3aeebb7382e8125b47a7b493923d06c91e050010389c039b8cf"
+  },
+  {
+    "id": "source-v4-code",
+    "kind": "official_source",
+    "url": "https://github.com/node-cache/node-cache/blob/59d947471d0dcc2d305d1675e80c04e4a598cc86/_src/lib/node_cache.coffee",
+    "version": "4.0.0 / 59d947471d0dcc2d305d1675e80c04e4a598cc86",
+    "retrievedAt": "2026-10-06",
+    "artifactPath": "upstream/4.0.0/_src/lib/node_cache.coffee",
+    "artifactSha256": "2b5819050c06c30f6b60e58cc30e2beae05efb2b4742689f862551a1da34f95b",
+    "supportingSpan": "if ttl >= 0",
+    "supportingSpanSha256": "c343b9c4f32c09372ec425e0a783fd9fd7e256e3ef748d150e3292d944859c2f"
+  },
+  {
+    "id": "source-v4-api",
+    "kind": "official_docs",
+    "url": "https://github.com/node-cache/node-cache/blob/59d947471d0dcc2d305d1675e80c04e4a598cc86/README.md",
+    "version": "4.0.0 / 59d947471d0dcc2d305d1675e80c04e4a598cc86",
+    "retrievedAt": "2026-10-06",
+    "artifactPath": "upstream/node-cache-4.0.0-README.md",
+    "artifactSha256": "08a754db9c0a3091036fc3e6ce385a66c1562ae22c0acf7829cd1ac9db105059",
+    "supportingSpan": "this key has no ttl",
+    "supportingSpanSha256": "4cdd2d24a45d407c287d0e095672838dd5d4d9564c0f2679e6412b7debdb3b62"
+  },
+  {
+    "id": "source-v4-release",
+    "kind": "release_notes",
+    "url": "https://github.com/node-cache/node-cache/blob/59d947471d0dcc2d305d1675e80c04e4a598cc86/README.md",
+    "version": "4.0.0 historical release record",
+    "retrievedAt": "2026-10-06",
+    "artifactPath": "upstream/node-cache-4.0.0-README.md",
+    "artifactSha256": "08a754db9c0a3091036fc3e6ce385a66c1562ae22c0acf7829cd1ac9db105059",
+    "supportingSpan": "4.0.0",
+    "supportingSpanSha256": "b4116d6e880009dc1440ddab7ec054bcea529aea394ec5bab7943b415a359281"
+  }
+]

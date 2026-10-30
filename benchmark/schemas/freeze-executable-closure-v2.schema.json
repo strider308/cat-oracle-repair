@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FreezeExecutableClosureV2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "rows"],
+  "properties": {
+    "version": {"const": "FreezeExecutableClosureV2"},
+    "rows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["path", "gitMode", "gitBlobObjectId", "commitBlobSha256"],
+        "properties": {
+          "path": {"type": "string", "pattern": "^(?!/)(?!.*\\\\)(?!.*(?:^|/)\\.{1,2}(?:/|$)).+$"},
+          "gitMode": {"enum": ["100644", "100755"]},
+          "gitBlobObjectId": {"type": "string", "pattern": "^[a-f0-9]{40}$"},
+          "commitBlobSha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PreCandidateFreezeV2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["manifestVersion", "status", "futureAnchor", "artifacts", "executableClosureVersion", "executableClosureSha256", "profileSha256", "mutationSpecSha256", "buildContractSha256", "sameCandidateProtocolSha256", "acceptanceMatrixSha256", "dependencyIdentityVersion", "dependencyIdentitySha256", "dependencyLockSha256", "executionInfrastructureIdentitySha256", "generatorSourceIdentitySha256", "controlledGateSourceIdentitySha256", "sameCandidateContractSha256", "attributePolicyPath", "attributePolicySha256", "worktreeNormalizationPolicy", "trustedRunnerVersion", "trustedRunnerEntrypointPath", "trustedRunnerSourceIdentitySha256"],
+  "properties": {
+    "manifestVersion": {"const": "PreCandidateFreezeV2"},
+    "status": {"const": "READY_FOR_OWNER_FREEZE_COMMIT"},
+    "futureAnchor": {"const": "freezeCommitSha"},
+    "artifacts": {"type": "object", "propertyNames": {"enum": ["benchmark/protocol/controlled-subject-profile-v1.json", "benchmark/protocol/controlled-mutation-spec-v1.json", "benchmark/protocol/controlled-build-contract-v1.json", "benchmark/protocol/controlled-profile-acceptance-matrix-v1.json", "benchmark/protocol/single-case-v2.json", "benchmark/schemas/controlled-challenge-manifest-v1.schema.json", "benchmark/schemas/controlled-generation-evidence-v2.schema.json", "benchmark/schemas/controlled-subject-profile-v1.schema.json", "benchmark/schemas/controlled-benchmark-subject-receipt-v1.schema.json", "benchmark/schemas/single-case-result-v1.schema.json", "benchmark/protocol/freeze-executable-closure-v2.json", "benchmark/protocol/freeze-authority-supersession-v1.json", "benchmark/protocol/generation-contract-supersession-v1.json", "benchmark/protocol/freeze-authority-v2-acceptance-matrix.json", "benchmark/schemas/freeze-executable-closure-v2.schema.json", "benchmark/schemas/pre-candidate-freeze-v2.schema.json", "benchmark/schemas/freeze-authority-v2-acceptance-matrix.schema.json", "scripts/cat-prepare-freeze-authority-v2.ts", "tests/freeze-authority-v2.test.ts", "tests/controlled-candidate-generator.test.ts", "tests/controlled-subject-profile.test.ts", "docs/BENCHMARK_PROTOCOL.md", "scripts/Invoke-CatTrustedFreezeRunnerV2.ps1", "tests/cat-trusted-freeze-runner-v2.test.ts", ".gitattributes"]}, "additionalProperties": {"type": "string", "pattern": "^[a-f0-9]{64}$"}},
+    "executableClosureVersion": {"const": "FreezeExecutableClosureV2"},
+    "executableClosureSha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "profileSha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "mutationSpecSha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "buildContractSha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "sameCandidateProtocolSha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "acceptanceMatrixSha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "dependencyIdentityVersion": {"const": "DependencyInventoryV1"},
+    "dependencyIdentitySha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "dependencyLockSha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "executionInfrastructureIdentitySha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "generatorSourceIdentitySha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "controlledGateSourceIdentitySha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "sameCandidateContractSha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "attributePolicyPath": {"const": ".gitattributes"},
+    "attributePolicySha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "worktreeNormalizationPolicy": {"const": "CRLF_TO_LF_V1"},
+    "trustedRunnerVersion": {"const": "TrustedCommittedRunnerV1"},
+    "trustedRunnerEntrypointPath": {"const": "scripts/cat-trusted-freeze-runner-v2.ts"},
+    "trustedRunnerSourceIdentitySha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["receiptVersion", "receiptKind", "runId", "createdAt", "receiptPath", "threatModel", "maliciousCodeIsolationClaim", "profileSha256", "mutationSpecSha256", "sourceCandidateHash", "runtimeCandidateHash", "freezeCommitSha", "generationEvidenceSha256", "challengeManifestSha256", "dependencyIdentity", "executionInfrastructureIdentitySha256", "subjectReceiptPath", "subjectReceiptHash", "jobStatus", "decision", "receiptHash"],
+  "properties": {
+    "receiptVersion": {"const": 1},
+    "receiptKind": {"const": "CONTROLLED_BENCHMARK_SUBJECT_V1"},
+    "runId": {"type": "string", "format": "uuid"},
+    "createdAt": {"type": "string", "format": "date-time"},
+    "receiptPath": {"type": "string"},
+    "threatModel": {"const": "CONTROLLED_REPRODUCIBLE_MUTATION_V1"},
+    "maliciousCodeIsolationClaim": {"const": false},
+    "profileSha256": {"$ref": "#/$defs/sha256"},
+    "mutationSpecSha256": {"$ref": "#/$defs/sha256"},
+    "sourceCandidateHash": {"$ref": "#/$defs/sha256"},
+    "runtimeCandidateHash": {"$ref": "#/$defs/sha256"},
+    "freezeCommitSha": {"type": "string", "pattern": "^[a-f0-9]{40}$"},
+    "generationEvidenceSha256": {"$ref": "#/$defs/sha256"},
+    "challengeManifestSha256": {"$ref": "#/$defs/sha256"},
+    "dependencyIdentity": {"type": "object", "additionalProperties": false, "required": ["root", "inventoryAlgorithm", "fileCount", "inventorySha256", "lockfileSha256"], "properties": {"root": {"type": "string"}, "inventoryAlgorithm": {"type": "string"}, "fileCount": {"type": "integer", "minimum": 1}, "inventorySha256": {"$ref": "#/$defs/sha256"}, "lockfileSha256": {"$ref": "#/$defs/sha256"}}},
+    "executionInfrastructureIdentitySha256": {"$ref": "#/$defs/sha256"},
+    "subjectReceiptPath": {"type": "string"},
+    "subjectReceiptHash": {"$ref": "#/$defs/sha256"},
+    "jobStatus": {"enum": ["COMPLETED", "INCONCLUSIVE"]},
+    "decision": {"enum": ["ACCEPTED", "REJECTED", null]},
+    "receiptHash": {"$ref": "#/$defs/sha256"}
+  },
+  "$defs": {"sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}
+}

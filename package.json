@@ -1,0 +1,28 @@
+{
+  "name": "counterfactual-acceptance",
+  "version": "0.1.0-hackathon",
+  "private": true,
+  "description": "Counterfactual Acceptance Testing — acceptance firewall for AI-written code.",
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "status": "node -e \"console.log('CAT_SPRINT_4 / RELEASE_CANDIDATE / HUMAN_REVIEW')\"",
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "cat:preflight": "node --experimental-strip-types scripts/cat-preflight.ts",
+    "cat:smoke": "node --experimental-strip-types scripts/cat-smoke.ts",
+    "cat:hero": "node --experimental-strip-types scripts/cat-hero.ts",
+    "cat:oracle": "node --experimental-strip-types scripts/cat-oracle.ts",
+    "cat:oracle:repair": "node --experimental-strip-types scripts/cat-oracle-gap-repair.ts",
+    "cat:oracle:observation:prepare": "node --experimental-strip-types scripts/cat-prepare-oracle-observation-proposal.ts",
+    "cat:sealed": "node --experimental-strip-types scripts/cat-sealed.ts",
+    "cat:repair-preflight": "node --experimental-strip-types scripts/cat-repair-preflight.ts",
+    "cat:inference-authorization-proposal": "node --experimental-strip-types scripts/cat-inference-authorization-proposal.ts",
+    "cat:repair": "node --experimental-strip-types scripts/cat-repair.ts",
+    "cat:evidence": "node --experimental-strip-types scripts/cat-public-evidence.ts",
+    "cat:console": "node --experimental-strip-types scripts/cat-evidence-console.ts",
+    "cat:console:check": "node --experimental-strip-types scripts/cat-evidence-console.ts --check",
+    "cat:console:package": "node --experimental-strip-types scripts/cat-console-static.ts"
+  }
+}

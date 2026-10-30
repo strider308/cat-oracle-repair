@@ -1,0 +1,41 @@
+{
+  "schema": "CandidateFDependencyClosureV2Proposal",
+  "authorityStatus": "PROPOSAL_ONLY_NOT_FROZEN",
+  "executionAuthorized": false,
+  "sourceCandidateCommit": "cec8054ba8690172a7b53267cc985a4445b7860b",
+  "freezeCommit": "5069680ff093695a227bf410eb3de88d99dce9e7",
+  "sourceCandidateHash": "80424bd379df4a836680d5ca420289c7e080a24377e61947a393f01c08d0a8c1",
+  "runtimeCandidateHash": "fc594a965abb22c1542d7b887a8490244454d0c9ba51e16babeaeabf456e7621",
+  "dependencyInventoryVersion": "DependencyInventoryV1",
+  "expectedDependencyRows": "DERIVE_AND_REHASH_THE_TWO_LOCKED_PACKAGE_ROOTS_BEFORE_STAGING",
+  "packageLockSha256": "21c448532a8e400504c800df67ad246d6d9461c7883fc7e68861d3960ebc3ce8",
+  "packageFileCount": 1057,
+  "packageRowsSha256": "2ed00926190bce0bc8b335b3d5f33bb64ac3674c43c852162fcd922085ec7f8f",
+  "packageRoots": [
+    {"name": "clone", "version": "1.0.4", "integrity": "sha512-JQHZ2QMW6l3aH/j6xCqQThY/9OH4D/9ls34cgkUBiEeocRTU04tHfKPBsUK1PqZCUQM7GiA0IIXJSuXHI64Kbg=="},
+    {"name": "lodash", "version": "4.18.1", "integrity": "sha512-dMInicTPVE8d1e5otfwmmjlxkZoUpiVLwyeTdUsi/Caj/gfzzblBcCE5sRHV/AsjuCmxWrte2TNGSYuCeCq+0Q=="}
+  ],
+  "directRuntimeSpecifiers": [
+    "lodash/assignIn",
+    "lodash/isArray",
+    "lodash/isString",
+    "lodash/isFunction",
+    "lodash/isNumber",
+    "lodash/isObject",
+    "lodash/size",
+    "lodash/template",
+    "clone"
+  ],
+  "allowedBuiltins": ["events"],
+  "closureRules": [
+    "Derive transitive package files from the candidate package metadata and the exact lockfile; never load candidate modules to discover require.cache.",
+    "Inventory every regular file under the isolated runtime dependency root and require exact sorted path plus SHA-256 equality with the contract rows.",
+    "Reject symlinks, path escapes, native addons, unlisted packages, duplicate rows, and any lockfile hash mismatch.",
+    "Bind the resulting closure hash and lockfile hash into generation and evaluation receipts before execution."
+  ],
+  "blockers": [
+    "The current recovery workspace's 4,219-file DependencyInventoryV1 tree matches the frozen a0923da0a3195e2384bb2b56ffbcd45c891cd631cc28433ed464c27527980849 identity. This confirms the local fixture only; it does not change freeze authority.",
+    "The 1,057 package-root path/hash rows were reproduced from the pinned lock and pass the focused inventory check, but remain proposal evidence and require owner/security review before any authority successor.",
+    "This proposal does not supersede DP05B freeze authority or authorize Candidate-F execution."
+  ]
+}
