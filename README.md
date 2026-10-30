@@ -1,8 +1,15 @@
 # Counterfactual Acceptance Testing (CAT)
 
-**Release state:** source-only MIT public-release candidate; public host and Nebius sponsor-run evidence are not yet established. Focused Oracle Repair and recorded-evidence checks pass on this source. A direct 362-test run was reported passing at source commit `53a80fac269da2c363ede8d2f2dfce3467310321`; the receipt-bound validation still showed Docker, loopback, and Windows junction restrictions. The direct run is not independently reproduced in this release assembly. **Public oracle: WEAK.**
+**Release state:** public MIT-licensed source-only snapshot and Cloudflare Pages static Console deployment. Nebius sponsor-run evidence is not established. Focused Oracle Repair and recorded-evidence checks pass on this source. A direct 362-test run was reported passing at source commit `53a80fac269da2c363ede8d2f2dfce3467310321`; the receipt-bound validation still showed Docker, loopback, and Windows junction restrictions. The direct run is not independently reproduced in this release assembly. **Public oracle: WEAK.**
 
 > Your tests passed. Would the wrong product have passed too?
+
+## Public demo and source
+
+- **Hosted static Console:** https://cat-oracle-repair.pages.dev/ (Cloudflare Pages deployment reported successful on October 30, 2026; independent end-to-end browser acceptance is pending).
+- **Public source repository:** https://github.com/strider308/cat-oracle-repair
+- **License:** root [MIT LICENSE](LICENSE) for CAT-original material; see [third-party notices](THIRD-PARTY-NOTICES.md).
+- **Important limitation:** This is a static evidence viewer. The model-proposal examples are labeled simulations; no live Nebius/NVIDIA inference POST has occurred. The project does not claim sponsor runtime eligibility on that basis.
 
 CAT checks whether existing acceptance evidence can distinguish approved behavior from plausible alternatives. Its strongest result is consistency with an approved interpretation over evaluated distinguishing cases; it does not prove an implementation correct.
 
@@ -50,7 +57,7 @@ Prepare an allowlisted static package from a committed, tracked-clean checkout:
 npm run cat:console:package
 ```
 
-The exporter writes to ignored `.verification-runs/cat-console-static-*`. It includes fixed assets, security headers, the summary, six hash-bound public source files, two public case JSON files and a hash manifest. Inspect the manifest and run a deployment-equivalent smoke before publishing. No host is approved or deployed.
+The exporter writes to ignored `.verification-runs/cat-console-static-*`. It includes fixed assets, security headers, the summary, six hash-bound public source files, two public case JSON files and a hash manifest. A static bundle was deployed to Cloudflare Pages on October 30, 2026 (15 files uploaded). The public site still requires independent HTTP, browser, and evidence-link acceptance; do not mistake upload success for completed live-site testing.
 
 ## Verify a public record
 
@@ -72,8 +79,8 @@ The prepared Oracle Observation Proposal targets only `nvidia/nemotron-3-super-1
 - No live sponsor-backed repair; no Candidate F evaluation; no inference POST. Sponsor model availability was checked with GET only.
 - Public oracle remains WEAK.
 - The three-domain examples do not constitute sealed independent evaluation; cache evidence is historical and the other two are in-process synthetic tests.
-- No public URL, deployment, public repository release, or YouTube/Devpost publication exists.
-- Root project license and third-party notices still require rights-holder review. Commit history contains author email metadata requiring an owner publication decision; history was not rewritten.
+- Public GitHub source and a Cloudflare Pages static deployment now exist. Independent hosted route/viewport checks are still pending. No YouTube video or Devpost submission is claimed.
+- A root MIT license and third-party notices are included in the public source snapshot with the project owner's release authorization. The scope of third-party obligations remains as documented in the notices. The public snapshot uses a fresh Git history rather than exporting the private history.
 - A test pass, public fixture or demo is not an independent sealed evaluation.
 
 ## Work provenance
